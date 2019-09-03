@@ -12,4 +12,6 @@ public interface VehiculoRepository {
 	public void guardarVehiculo(Vehiculo vehiculo);
 	public void eliminarVehiculo(int Idvehiculo);
 	public List<Vehiculo> listarVehiculo();
+	public List<Vehiculo> listarVehiculosDisponibles();
+	public List<Vehiculo> listarVehiculosNoDisponibles();
 }

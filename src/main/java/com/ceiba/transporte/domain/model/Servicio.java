@@ -6,11 +6,12 @@ public class Servicio {
 	private int idConductor;
 	private int idVehiculo;
 	private String cedulaServ;
-	private float distanciaKmServ;
+	private double distanciaKmServ;
 	private String direccionInicialSev;
 	private String direccionFinalServ;
 	private String municipioFinalServ;
-	private float totalServ;
+	private double totalServ;
+	private Tonelaje tonelajeServ;
 	
 	public Servicio() {
 		
@@ -40,7 +41,7 @@ public class Servicio {
 	public void setCedulaServ(String cedulaServ) {
 		this.cedulaServ = cedulaServ;
 	}
-	public float getDistanciaKmServ() {
+	public double getDistanciaKmServ() {
 		return distanciaKmServ;
 	}
 	public void setDistanciaKmServ(float distanciaKmServ) {
@@ -64,13 +65,20 @@ public class Servicio {
 	public void setMunicipioFinalServ(String municipioFinalServ) {
 		this.municipioFinalServ = municipioFinalServ;
 	}
-	public float getTotalServ() {
+	public double getTotalServ() {
 		return totalServ;
 	}
 	public void setTotalServ(float totalServ) {
 		this.totalServ = totalServ;
 	}
 
+	public Tonelaje getTonelajeServ() {
+		return tonelajeServ;
+	}
+
+	public void setTonelajeServ(Tonelaje tonelajeServ) {
+		this.tonelajeServ = tonelajeServ;
+	}
 	
 	
 }
