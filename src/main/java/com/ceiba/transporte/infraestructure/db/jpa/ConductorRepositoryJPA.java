@@ -8,6 +8,10 @@ import com.ceiba.transporte.infraestructure.entity.ConductorEntity;
 
 public interface ConductorRepositoryJPA  extends JpaRepository<ConductorEntity,Long> 
 {
-	@Query("SELECT c FROM ConductorEntity ")
+	@Query("SELECT c FROM ConductorEntity c ")
 	List<ConductorEntity> listConductores();
+	
+	
+	
+	
 }

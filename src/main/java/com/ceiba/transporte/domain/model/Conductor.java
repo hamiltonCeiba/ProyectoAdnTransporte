@@ -16,7 +16,7 @@ public class Conductor {
 	
 	public Conductor(int idConductor, String cedulaCond, String primerNombre, String segundoNombre,
 			String primerApellido, String segundoApellido, int celularCond, boolean disponibleCond) {
-		super();
+		//validaciones de consistencia
 		this.idConductor = idConductor;
 		this.cedulaCond = cedulaCond;
 		this.primerNombre = primerNombre;

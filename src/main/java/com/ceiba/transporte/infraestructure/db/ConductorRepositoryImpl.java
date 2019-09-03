@@ -18,6 +18,12 @@ public class ConductorRepositoryImpl implements ConductorRepository {
 
 	@Autowired
 	private ModelMapper mapper;
+	
+	public ConductorRepositoryImpl(ConductorRepositoryJPA repositorio, ModelMapper mapper) {
+		super();
+		this.repositorio = repositorio;
+		this.mapper = mapper;
+	}
 
 	@Override
 	public void guardarConductor(Conductor conductor) {

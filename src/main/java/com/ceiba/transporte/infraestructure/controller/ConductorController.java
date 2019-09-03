@@ -1,5 +1,6 @@
 package com.ceiba.transporte.infraestructure.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,7 @@ import com.ceiba.transporte.domain.service.ConductorService;
 
 @CrossOrigin
 @RestController
-@RequestMapping(value = "/transporte/Conductor", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/transporte/conductor", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 public class ConductorController {
 
 	@Autowired
@@ -34,7 +35,11 @@ public class ConductorController {
 	
 	@PostMapping(value = "/listar-conductor")
 	public @ResponseBody List<Conductor>  listarConductores() {
-		return conductorService.listarConductores();
+		List<Conductor> listCond = new ArrayList<Conductor>();
+		Conductor cond = new Conductor(1, "123", "hamilton", "Daniel", "Jojoa", "Cordoba", 123, true);
+		listCond.add(cond);
+		//return conductorService.listarConductores();
+		return listCond;
 	}
 	
 }

@@ -2,6 +2,8 @@ package com.ceiba.transporte.infraestructure.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -10,7 +12,9 @@ import javax.persistence.Table;
 public class ConductorEntity {
 	
 	@Id
-	private int idConductor;
+	@Column(name = "id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long idConductor;
 	
 	@Column(name = "cedula_cond")	
 	private String cedulaCond;
@@ -26,10 +30,23 @@ public class ConductorEntity {
 	private int celularCond;
 	@Column(name = "disponible_cod")
 	private boolean disponibleCond;
-	public int getIdConductor() {
+	
+	
+	public ConductorEntity(long idConductor, String cedulaCond, String primerNombre, String segundoNombre,
+			String primerApellido, String segundoApellido, int celularCond, boolean disponibleCond) {
+		this.idConductor = idConductor;
+		this.cedulaCond = cedulaCond;
+		this.primerNombre = primerNombre;
+		this.segundoNombre = segundoNombre;
+		this.primerApellido = primerApellido;
+		this.segundoApellido = segundoApellido;
+		this.celularCond = celularCond;
+		this.disponibleCond = disponibleCond;
+	}
+	public long getIdConductor() {
 		return idConductor;
 	}
-	public void setIdConductor(int idConductor) {
+	public void setIdConductor(long idConductor) {
 		this.idConductor = idConductor;
 	}
 	public String getCedulaCond() {

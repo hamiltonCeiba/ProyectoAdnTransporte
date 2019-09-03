@@ -16,7 +16,7 @@ import com.ceiba.transporte.domain.service.VehiculoService;
 
 @CrossOrigin
 @RestController
-@RequestMapping(value = "/transporte/Vehiculo", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/transporte/vehiculo", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 
 public class VehiculoController {
 

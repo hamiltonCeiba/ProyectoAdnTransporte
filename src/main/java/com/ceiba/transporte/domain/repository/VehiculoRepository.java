@@ -10,7 +10,7 @@ import com.ceiba.transporte.domain.model.Vehiculo;
 public interface VehiculoRepository {
 
 	public void guardarVehiculo(Vehiculo vehiculo);
-	public void eliminarVehiculo(int Idvehiculo);
+	public void eliminarVehiculo(int idvehiculo);
 	public List<Vehiculo> listarVehiculo();
 	public List<Vehiculo> listarVehiculosDisponibles();
 	public List<Vehiculo> listarVehiculosNoDisponibles();
