@@ -30,10 +30,10 @@ public class TotalServicioService {
 	}
 
 	public double calcularSegunMunicipio(double subTotalServicio, String municipio) {
-		if (municipio.equalsIgnoreCase(MEDELLIN)) {
+		if (!municipio.equalsIgnoreCase(MEDELLIN)) {
 			subTotalServicio = subTotalServicio * 1.10;
 		}
-		return subTotalServicio;
+		return Math.round(subTotalServicio);
 
 	}
 }
