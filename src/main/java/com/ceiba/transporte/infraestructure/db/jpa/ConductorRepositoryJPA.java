@@ -11,7 +11,4 @@ public interface ConductorRepositoryJPA  extends JpaRepository<ConductorEntity,L
 	@Query("SELECT c FROM ConductorEntity c ")
 	List<ConductorEntity> listConductores();
 	
-	
-	
-	
 }

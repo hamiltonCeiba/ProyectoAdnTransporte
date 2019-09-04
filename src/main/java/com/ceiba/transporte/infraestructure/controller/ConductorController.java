@@ -9,15 +9,18 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ceiba.transporte.domain.model.Conductor;
 import com.ceiba.transporte.domain.service.ConductorService;
 
-@CrossOrigin
+
 @RestController
-@RequestMapping(value = "/transporte/conductor", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+//@RequestMapping(value = "/transporte/conductor", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/transporte/conductor")
 public class ConductorController {
 
 	@Autowired
@@ -33,7 +36,10 @@ public class ConductorController {
 		conductorService.eliminarConductor(conductor);
 	}
 	
-	@PostMapping(value = "/listar-conductor")
+	//@PostMapping(value = "/listar-conductor")
+	@CrossOrigin
+	@RequestMapping(value = "/listar-conductor",method=RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	@ResponseStatus
 	public @ResponseBody List<Conductor>  listarConductores() {
 		List<Conductor> listCond = new ArrayList<Conductor>();
 		Conductor cond = new Conductor(1, "123", "hamilton", "Daniel", "Jojoa", "Cordoba", 123, true);
