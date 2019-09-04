@@ -31,6 +31,9 @@ public class ConductorEntity {
 	@Column(name = "disponible_cod")
 	private boolean disponibleCond;
 	
+	public ConductorEntity() {
+		
+	}
 	
 	public ConductorEntity(long idConductor, String cedulaCond, String primerNombre, String segundoNombre,
 			String primerApellido, String segundoApellido, int celularCond, boolean disponibleCond) {

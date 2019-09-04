@@ -26,6 +26,11 @@ public class ConductorService {
 	public void eliminarConductor(Conductor conductor) {
 		conductorRepository.eliminarConductor(conductor);
 	}
+	
+	public boolean eliminarConductorPorCedula(String cedulaConductor) {
+		return conductorRepository.eliminarConductorPorCedula(cedulaConductor);
+	}
+	
 	public List<Conductor> listarConductores(){
 		return conductorRepository.listarConductore();
 	}

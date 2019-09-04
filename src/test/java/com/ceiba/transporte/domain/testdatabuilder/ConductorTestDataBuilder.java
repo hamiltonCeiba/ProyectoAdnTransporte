@@ -4,13 +4,12 @@ import com.ceiba.transporte.domain.model.Conductor;
 
 public class ConductorTestDataBuilder {
 
-	private int idConductor;	
 	private String cedula;
 	private String primerNombre;
 	private String segundoNombre;
 	private String primerApellido;
 	private String segundoApellido;
-	private int celular;
+	private String celular;
 	private boolean disponible;
 	
 	public ConductorTestDataBuilder withCedula(String cedula) {
@@ -38,7 +37,7 @@ public class ConductorTestDataBuilder {
 		return this;
 	}
 	
-	public ConductorTestDataBuilder withCelular(int celular) {
+	public ConductorTestDataBuilder withCelular(String celular) {
 		this.celular = celular;
 		return this;
 	}
@@ -49,6 +48,6 @@ public class ConductorTestDataBuilder {
 	}
 	
 	public Conductor build() {
-		return new Conductor(idConductor, cedula, primerNombre, segundoNombre, primerApellido, segundoApellido, celular, disponible);
+		return new Conductor(cedula, primerNombre, segundoNombre, primerApellido, segundoApellido, celular, disponible);
 	}
 }

@@ -1,52 +1,55 @@
 package com.ceiba.transporte.infraestructure.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ceiba.transporte.domain.model.Conductor;
 import com.ceiba.transporte.domain.service.ConductorService;
+import com.ceiba.transporte.infraestructure.controller.peticion.ConductorRequest;
 
 
 @RestController
 @RequestMapping(value = "/transporte/conductor", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-//@RequestMapping(value = "/transporte/conductor")
 public class ConductorController {
 
 	@Autowired
 	ConductorService conductorService; 
 	
 	@PostMapping(value = "/crear-conductor")
-	public void guardarConductor(@RequestBody Conductor conductor) {
+	public void guardarConductor(@RequestBody ConductorRequest conductorRequest) {
+		Conductor conductor = convertConductorRequestToConductor(conductorRequest);
 		conductorService.guardarConductor(conductor);
 	}
 	
 	@PostMapping(value = "/eliminar-conductor")
-	public void eliminarConductor(@RequestBody Conductor conductor) {
+	public void eliminarConductor(@RequestBody ConductorRequest conductorRequest) {
+		Conductor conductor = convertConductorRequestToConductor(conductorRequest);
 		conductorService.eliminarConductor(conductor);
 	}
 	
 	@PostMapping(value = "/listar-conductor")
-//	@CrossOrigin
-//	@RequestMapping(value = "/listar-conductor",method=RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-//	@ResponseStatus
 	public @ResponseBody List<Conductor>  listarConductores() {
-		//List<Conductor> listCond = new ArrayList<Conductor>();
-//		Conductor cond = new Conductor(1, "123", "hamilton", "Daniel", "Jojoa", "Cordoba", 123, true);
-//		listCond.add(cond);
-//		return listCond;
 		return conductorService.listarConductores();
 		
+	}
+	
+	@PostMapping(value = "/eliminar-conductor-cedula")
+	public void eliminarConductorPorCedula(@RequestBody String cedulaConductor) {
+		conductorService.eliminarConductorPorCedula(cedulaConductor);
+	}
+	
+	private Conductor convertConductorRequestToConductor(ConductorRequest conductorRequest) {
+		return new Conductor(conductorRequest.getCedula(), conductorRequest.getPrimerNombre(),
+				conductorRequest.getSegundoNombre(), conductorRequest.getPrimerApellido(),
+				conductorRequest.getSegundoApellido(), conductorRequest.getCelular(), 
+				conductorRequest.getDisponibleConductor());		
 	}
 	
 }

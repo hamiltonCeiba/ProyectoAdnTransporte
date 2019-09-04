@@ -1,30 +1,19 @@
-package com.ceiba.transporte.domain.model;
+package com.ceiba.transporte.infraestructure.controller.peticion;
 
-public class Conductor {
+import java.io.Serializable;
 
-		
-	private String cedula;
-	private String primerNombre;
-	private String segundoNombre;
-	private String primerApellido;
-	private String segundoApellido;
-	private String celular;
-	private boolean disponible;
+public class ConductorRequest implements Serializable {
+	private static final long serialVersionUID = -5075426439124835229L;
 	
-	public Conductor() {
-		
-	}
 	
-	public Conductor(String cedula, String primerNombre, String segundoNombre, String primerApellido,
-			String segundoApellido, String celular, boolean disponible) {
-		this.cedula = cedula;
-		this.primerNombre = primerNombre;
-		this.segundoNombre = segundoNombre;
-		this.primerApellido = primerApellido;
-		this.segundoApellido = segundoApellido;
-		this.celular = celular;
-		this.disponible = disponible;
-	}
+    private String cedula;
+    private String primerNombre;
+    private String segundoNombre;
+    private String primerApellido;
+    private String segundoApellido;
+    private String celular;
+    private boolean disponibleConductor;
+    
 	public String getCedula() {
 		return cedula;
 	}
@@ -61,17 +50,16 @@ public class Conductor {
 	public void setCelular(String celular) {
 		this.celular = celular;
 	}
-	public boolean isDisponible() {
-		return disponible;
+	public boolean getDisponibleConductor() {
+		return disponibleConductor;
 	}
-	public void setDisponible(boolean disponible) {
-		this.disponible = disponible;
+	public void setDisponibleConductor(boolean disponibleConductor) {
+		this.disponibleConductor = disponibleConductor;
 	}
-	
-	
-	
-		
-	
-	
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+    
+    
 
 }

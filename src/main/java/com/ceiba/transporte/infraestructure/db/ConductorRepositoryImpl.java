@@ -41,12 +41,17 @@ public class ConductorRepositoryImpl implements ConductorRepository {
 
 	@Override
 	public List<Conductor> listarConductore() {
-		List<ConductorEntity> listconductor = (List<ConductorEntity>) repositorio.listConductores();
-		List<Conductor> listaConductores = new ArrayList<Conductor>();
-		listconductor.forEach((conductor)->{
+		List<ConductorEntity> listconductor = repositorio.listConductores();
+		List<Conductor> listaConductores = new ArrayList<>();
+		listconductor.forEach(conductor-> {
 			listaConductores.add(mapper.map(conductor, Conductor.class));
 					});
 		return listaConductores;
+	}
+	
+	@Override
+	public boolean eliminarConductorPorCedula(String cedula) {
+		return repositorio.eliminarConductorPorCedula(cedula);
 	}
 
 }
