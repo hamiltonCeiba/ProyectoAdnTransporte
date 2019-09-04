@@ -12,7 +12,7 @@ public class ConductorRequest implements Serializable {
     private String primerApellido;
     private String segundoApellido;
     private String celular;
-    private boolean disponibleConductor;
+    private boolean disponible;
     
 	public String getCedula() {
 		return cedula;
@@ -51,10 +51,10 @@ public class ConductorRequest implements Serializable {
 		this.celular = celular;
 	}
 	public boolean getDisponibleConductor() {
-		return disponibleConductor;
+		return disponible;
 	}
-	public void setDisponibleConductor(boolean disponibleConductor) {
-		this.disponibleConductor = disponibleConductor;
+	public void setDisponibleConductor(boolean disponible) {
+		this.disponible = disponible;
 	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;

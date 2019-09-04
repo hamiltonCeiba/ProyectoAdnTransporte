@@ -29,7 +29,8 @@ public class ConductorRepositoryImpl implements ConductorRepository {
 
 	@Override
 	public void guardarConductor(Conductor conductor) {
-		repositorio.save(mapper.map(conductor, ConductorEntity.class));
+		ConductorEntity entity = mapper.map(conductor, ConductorEntity.class);
+		repositorio.save(entity);
 
 	}
 

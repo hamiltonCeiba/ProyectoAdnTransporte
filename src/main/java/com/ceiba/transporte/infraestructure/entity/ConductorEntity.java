@@ -16,36 +16,26 @@ public class ConductorEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long idConductor;
 	
-	@Column(name = "cedula_cond")	
-	private String cedulaCond;
-	@Column(name = "primer_nombre_cond")
+	@Column(name = "cedula")	
+	private String cedula;
+	@Column(name = "primer_nombre")
 	private String primerNombre;
-	@Column(name = "segundo_nombre_cod")
+	@Column(name = "segundo_nombre")
 	private String segundoNombre;
-	@Column(name = "primer_apellido_cod")
+	@Column(name = "primer_apellido")
 	private String primerApellido;
-	@Column(name = "segundo_apellido_cod")
+	@Column(name = "segundo_apellido")
 	private String segundoApellido;
-	@Column(name = "celular_cod")
-	private int celularCond;
-	@Column(name = "disponible_cod")
-	private boolean disponibleCond;
+	@Column(name = "celular")
+	private String celular;
+	@Column(name = "disponible")
+	private boolean disponible;
 	
 	public ConductorEntity() {
 		
 	}
 	
-	public ConductorEntity(long idConductor, String cedulaCond, String primerNombre, String segundoNombre,
-			String primerApellido, String segundoApellido, int celularCond, boolean disponibleCond) {
-		this.idConductor = idConductor;
-		this.cedulaCond = cedulaCond;
-		this.primerNombre = primerNombre;
-		this.segundoNombre = segundoNombre;
-		this.primerApellido = primerApellido;
-		this.segundoApellido = segundoApellido;
-		this.celularCond = celularCond;
-		this.disponibleCond = disponibleCond;
-	}
+	
 	public long getIdConductor() {
 		return idConductor;
 	}
@@ -53,10 +43,10 @@ public class ConductorEntity {
 		this.idConductor = idConductor;
 	}
 	public String getCedulaCond() {
-		return cedulaCond;
+		return cedula;
 	}
 	public void setCedulaCond(String cedulaCond) {
-		this.cedulaCond = cedulaCond;
+		this.cedula= cedulaCond;
 	}
 	public String getPrimerNombre() {
 		return primerNombre;
@@ -82,17 +72,17 @@ public class ConductorEntity {
 	public void setSegundoApellido(String segundoApellido) {
 		this.segundoApellido = segundoApellido;
 	}
-	public int getCelularCond() {
-		return celularCond;
+	public String getCelularCond() {
+		return celular;
 	}
-	public void setCelularCond(int celularCond) {
-		this.celularCond = celularCond;
+	public void setCelularCond(String celularCond) {
+		this.celular = celularCond;
 	}
 	public boolean isDisponibleCond() {
-		return disponibleCond;
+		return disponible;
 	}
 	public void setDisponibleCond(boolean disponibleCond) {
-		this.disponibleCond = disponibleCond;
+		this.disponible = disponibleCond;
 	}
 	
 	

@@ -13,7 +13,8 @@ public interface ConductorRepositoryJPA  extends JpaRepository<ConductorEntity,L
 	@Query("SELECT c FROM ConductorEntity c ")
 	List<ConductorEntity> listConductores();
 	
-	@Query("DELETE  FROM ConductorEntity  where cedula = : cedula ")
-	boolean eliminarConductorPorCedula(@Param(value = "cedula") String cedula);
+	//@Query("DELETE  FROM ConductorEntity  where cedula = : cedula ")
+	@Query("DELETE  FROM ConductorEntity  where primer_nombre = : cedulaConductor")
+	boolean eliminarConductorPorCedula(@Param(value = "cedulaConductor") String cedula);
 	
 }
