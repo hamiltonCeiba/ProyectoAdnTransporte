@@ -20,21 +20,21 @@ import com.ceiba.transporte.domain.service.VehiculoService;
 
 public class VehiculoController {
 
-	@Autowired
-	VehiculoService vehiculoService;
-	
-	@PostMapping(value = "/crear-vehiculo")
-	public void guardarVehiculo(@RequestBody Vehiculo vehiculo) {
-		vehiculoService.guardarVehiculo(vehiculo);
-	}
-	
-	@PostMapping(value = "/eliminar-vehiculo")
-	public void eliminarVehiculo(@RequestBody Vehiculo vehiculo) {
-		vehiculoService.eliminarVehiculo(vehiculo);
-	}
-	
-	@PostMapping(value = "/listar-vehiculo")
-	public @ResponseBody List<Vehiculo> listarVehiculo(){
-		return vehiculoService.listarVehiculo();
-	}
+//	@Autowired
+//	VehiculoService vehiculoService;
+//	
+//	@PostMapping(value = "/crear-vehiculo")
+//	public void guardarVehiculo(@RequestBody Vehiculo vehiculo) {
+//		vehiculoService.guardarVehiculo(vehiculo);
+//	}
+//	
+//	@PostMapping(value = "/eliminar-vehiculo")
+//	public void eliminarVehiculo(@RequestBody Vehiculo vehiculo) {
+//		vehiculoService.eliminarVehiculo(vehiculo);
+//	}
+//	
+//	@PostMapping(value = "/listar-vehiculo")
+//	public @ResponseBody List<Vehiculo> listarVehiculo(){
+//		return vehiculoService.listarVehiculo();
+//	}
 }

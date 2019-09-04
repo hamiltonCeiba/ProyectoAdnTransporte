@@ -11,18 +11,18 @@ import com.ceiba.transporte.domain.repository.TonelajeRepository;
 @Service
 public class TonelajeService {
 	
-	@Autowired
-	TonelajeRepository tonelajeRepository;
-
-	public TonelajeService(TonelajeRepository tonelajeRepository) {
-		this.tonelajeRepository = tonelajeRepository;
-	}
-		
-	public void guardarTonelaje(Tonelaje tonelaje) {
-		tonelajeRepository.guardarTonelaje(tonelaje);
-	}
-	
-	public List<Tonelaje> listarTonelaje() {
-		return tonelajeRepository.listarTonelaje();
-	}
+//	@Autowired
+//	TonelajeRepository tonelajeRepository;
+//
+//	public TonelajeService(TonelajeRepository tonelajeRepository) {
+//		this.tonelajeRepository = tonelajeRepository;
+//	}
+//		
+//	public void guardarTonelaje(Tonelaje tonelaje) {
+//		tonelajeRepository.guardarTonelaje(tonelaje);
+//	}
+//	
+//	public List<Tonelaje> listarTonelaje() {
+//		return tonelajeRepository.listarTonelaje();
+//	}
 }

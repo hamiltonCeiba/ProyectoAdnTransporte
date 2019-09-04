@@ -19,17 +19,17 @@ import com.ceiba.transporte.domain.service.ServicioService;
 @RequestMapping(value = "/transporte/servicio", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 public class ServicioController {
 	
-	@Autowired
-	ServicioService servicioService;
-	
-	@PostMapping(value = "crear-servicio")
-	public void crearServicio(@RequestBody Servicio servicio) {
-		servicioService.guardarServicio(servicio);
-	}
-	
-	@PostMapping(value = "listar-servicio")
-	public @ResponseBody List<Servicio> listarServicio() {
-		return servicioService.listarTodoServicios();
-	}
+//	@Autowired
+//	ServicioService servicioService;
+//	
+//	@PostMapping(value = "crear-servicio")
+//	public void crearServicio(@RequestBody Servicio servicio) {
+//		servicioService.guardarServicio(servicio);
+//	}
+//	
+//	@PostMapping(value = "listar-servicio")
+//	public @ResponseBody List<Servicio> listarServicio() {
+//		return servicioService.listarTodoServicios();
+//	}
 
 }

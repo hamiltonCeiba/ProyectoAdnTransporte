@@ -6,7 +6,6 @@ import org.springframework.stereotype.Component;
 
 import com.ceiba.transporte.domain.model.Conductor;
 
-@Component
 public interface ConductorRepository {
 
 	public void guardarConductor(Conductor conductor);

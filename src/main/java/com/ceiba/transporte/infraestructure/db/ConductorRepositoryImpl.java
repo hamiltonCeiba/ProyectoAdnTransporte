@@ -5,12 +5,14 @@ import java.util.List;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.ceiba.transporte.domain.model.Conductor;
 import com.ceiba.transporte.domain.repository.ConductorRepository;
 import com.ceiba.transporte.infraestructure.db.jpa.ConductorRepositoryJPA;
 import com.ceiba.transporte.infraestructure.entity.ConductorEntity;
 
+@Repository 
 public class ConductorRepositoryImpl implements ConductorRepository {
 
 	@Autowired

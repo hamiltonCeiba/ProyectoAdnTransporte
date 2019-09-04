@@ -19,8 +19,8 @@ import com.ceiba.transporte.domain.service.ConductorService;
 
 
 @RestController
-//@RequestMapping(value = "/transporte/conductor", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-@RequestMapping(value = "/transporte/conductor")
+@RequestMapping(value = "/transporte/conductor", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+//@RequestMapping(value = "/transporte/conductor")
 public class ConductorController {
 
 	@Autowired
@@ -36,16 +36,17 @@ public class ConductorController {
 		conductorService.eliminarConductor(conductor);
 	}
 	
-	//@PostMapping(value = "/listar-conductor")
-	@CrossOrigin
-	@RequestMapping(value = "/listar-conductor",method=RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-	@ResponseStatus
+	@PostMapping(value = "/listar-conductor")
+//	@CrossOrigin
+//	@RequestMapping(value = "/listar-conductor",method=RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+//	@ResponseStatus
 	public @ResponseBody List<Conductor>  listarConductores() {
-		List<Conductor> listCond = new ArrayList<Conductor>();
-		Conductor cond = new Conductor(1, "123", "hamilton", "Daniel", "Jojoa", "Cordoba", 123, true);
-		listCond.add(cond);
-		//return conductorService.listarConductores();
-		return listCond;
+		//List<Conductor> listCond = new ArrayList<Conductor>();
+//		Conductor cond = new Conductor(1, "123", "hamilton", "Daniel", "Jojoa", "Cordoba", 123, true);
+//		listCond.add(cond);
+//		return listCond;
+		return conductorService.listarConductores();
+		
 	}
 	
 }

@@ -11,20 +11,20 @@ import com.ceiba.transporte.domain.repository.ServicioRepository;
 @Service
 public class ServicioService {
 
-	@Autowired
-	ServicioRepository servicioRepository;
-
-	public ServicioService(ServicioRepository servicioRepository) {
-		this.servicioRepository = servicioRepository;
-	}
-
-	public void guardarServicio(Servicio servicio) {
-		servicioRepository.guardarServicio(servicio);
-	}
-
-	public List<Servicio> listarTodoServicios() {
-		return servicioRepository.listarTodoServicios();
-	}
+//	@Autowired
+//	ServicioRepository servicioRepository;
+//
+//	public ServicioService(ServicioRepository servicioRepository) {
+//		this.servicioRepository = servicioRepository;
+//	}
+//
+//	public void guardarServicio(Servicio servicio) {
+//		servicioRepository.guardarServicio(servicio);
+//	}
+//
+//	public List<Servicio> listarTodoServicios() {
+//		return servicioRepository.listarTodoServicios();
+//	}
 
 	
 }
