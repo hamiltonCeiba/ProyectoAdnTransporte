@@ -20,6 +20,13 @@ public class TonelajeRepositoryImpl implements TonelajeRepository {
 	
 	@Autowired
 	private ModelMapper modelMapper;
+	
+	public TonelajeRepositoryImpl(TonelajeRepositoryJPA repositorio,ModelMapper modelMapper) {
+		super();
+		this.repositorio = repositorio;
+		this.modelMapper = modelMapper;
+	}
+	
 	@Override
 	public void guardarTonelaje(Tonelaje tonelaje) {
 		repositorio.save(convertToEntity(tonelaje));		

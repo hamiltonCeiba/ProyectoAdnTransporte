@@ -38,7 +38,7 @@ public class TonelajeController {
 	}
 	
 	private Tonelaje convertToTonelaje(TonelajeRequest request) {
-		return new Tonelaje(request.getRango(),  request.getDescripcion(), request.getPrecioKm());
+		return new Tonelaje(request.getRango(),  request.getPrecioKm());
 	}
 	
 }
