@@ -20,6 +20,12 @@ public class VehiculoRepositoryImpl implements VehiculoRepository{
 	@Autowired
 	private ModelMapper mapper;
 	
+	public VehiculoRepositoryImpl(VehiculoRepositoryJPA repositorio, ModelMapper mapper) {
+		super();
+		this.repositorio = repositorio;
+		this.mapper = mapper;
+	}
+	
 	@Override
 	public void guardarVehiculo(Vehiculo vehiculo) {
 		VehiculoEntity entity = convertToEntity(vehiculo);

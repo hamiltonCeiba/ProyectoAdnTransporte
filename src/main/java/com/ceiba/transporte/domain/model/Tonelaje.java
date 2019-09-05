@@ -2,42 +2,42 @@ package com.ceiba.transporte.domain.model;
 
 public class Tonelaje {
 
-	private int idTonelaje;
-	private float capacidadTon;
-	private  String descripcionTon;
-	private float precioKmTon;
+	private String rango;
+	private String descripcion;
+	private double precio;	
 	
-	public Tonelaje(int idTonelaje, float capacidadTon, String descripcionTon, float precioKmTon) {
-		super();
-		this.idTonelaje = idTonelaje;
-		this.capacidadTon = capacidadTon;
-		this.descripcionTon = descripcionTon;
-		this.precioKmTon = precioKmTon;
+	public Tonelaje() {
+		
 	}
-	public int getIdTonelaje() {
-		return idTonelaje;
+	
+	public Tonelaje( String rango, String descripcion, double precio) {
+		this.rango = rango;
+		this.descripcion = descripcion;
+		this.precio = precio;
 	}
-	public void setIdTonelaje(int idTonelaje) {
-		this.idTonelaje = idTonelaje;
+	
+	public String getRango() {
+		return rango;
 	}
-	public float getCapacidadTon() {
-		return capacidadTon;
+	public void setRango(String rango) {
+		this.rango = rango;
 	}
-	public void setCapacidadTon(float capacidadTon) {
-		this.capacidadTon = capacidadTon;
+	public String getDescripcion() {
+		return descripcion;
 	}
-	public String getDescripcionTon() {
-		return descripcionTon;
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
 	}
-	public void setDescripcionTon(String descripcionTon) {
-		this.descripcionTon = descripcionTon;
+
+	public double getPrecio() {
+		return precio;
 	}
-	public float getPrecioKmTon() {
-		return precioKmTon;
+
+	public void setPrecio(double precio) {
+		this.precio = precio;
 	}
-	public void setPrecioKmTon(float precioKmTon) {
-		this.precioKmTon = precioKmTon;
-	}
+	
+	
 	
 	
 

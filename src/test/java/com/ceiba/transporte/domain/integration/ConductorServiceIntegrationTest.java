@@ -67,13 +67,27 @@ public class ConductorServiceIntegrationTest {
 		// arrange
 		Conductor conductor = construirConductor();
 		TestRestTemplate restTemplate = new TestRestTemplate();
-		//act
 		HttpEntity<Conductor> entity = new HttpEntity<Conductor>(conductor,new HttpHeaders());
+		//act
+		
 		ResponseEntity<Conductor> response = restTemplate.exchange(obtenerUrl("/crear-conductor"), HttpMethod.POST,entity,Conductor.class);
 		int status = response.getStatusCodeValue();
 		//assert
 		assertTrue(status ==200);
 	}
+	
+//	@Test
+//	public void listarConductorServiceTest() {
+//		//arrange
+//		Conductor conductor = construirConductor();
+//		TestRestTemplate restTemplate = new TestRestTemplate();
+//		HttpEntity<Conductor> entity = new HttpEntity<Conductor>(conductor,new HttpHeaders());
+//		//act
+//		ResponseEntity<Conductor> response = restTemplate.exchange(obtenerUrl("/listar-conductor"), HttpMethod.POST,entity,Conductor.class);
+//		int status = response.getStatusCodeValue();
+//		//assert
+//		assertTrue(status ==200);
+//	}
 	
 	private Conductor construirConductor() {
 		return  new ConductorTestDataBuilder().withCedula(CEDULA).withPrimerApellido(PRIMER_APELLIDO)
