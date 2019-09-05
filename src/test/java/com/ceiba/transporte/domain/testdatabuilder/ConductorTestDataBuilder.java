@@ -10,7 +10,6 @@ public class ConductorTestDataBuilder {
 	private String primerApellido;
 	private String segundoApellido;
 	private String celular;
-	private boolean disponible;
 	
 	public ConductorTestDataBuilder withCedula(String cedula) {
 		this.cedula = cedula;
@@ -40,12 +39,8 @@ public class ConductorTestDataBuilder {
 	public ConductorTestDataBuilder withCelular(String celular) {
 		this.celular = celular;
 		return this;
-	}
+	}	
 	
-	public ConductorTestDataBuilder withDisponible(boolean disponible) {
-		this.disponible = disponible;
-		return this;
-	}
 	
 	public Conductor build() {
 		return new Conductor(cedula, primerNombre, segundoNombre, primerApellido, segundoApellido, celular);
