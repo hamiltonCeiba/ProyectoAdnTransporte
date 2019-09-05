@@ -50,10 +50,10 @@ public class ConductorRequest implements Serializable {
 	public void setCelular(String celular) {
 		this.celular = celular;
 	}
-	public boolean getDisponibleConductor() {
+	public boolean getDisponible() {
 		return disponible;
 	}
-	public void setDisponibleConductor(boolean disponible) {
+	public void setDisponible(boolean disponible) {
 		this.disponible = disponible;
 	}
 	public static long getSerialversionuid() {

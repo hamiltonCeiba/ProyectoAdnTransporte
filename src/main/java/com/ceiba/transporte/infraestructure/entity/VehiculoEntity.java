@@ -1,76 +1,94 @@
-package com.ceiba.transporte.domain.model;
+package com.ceiba.transporte.infraestructure.entity;
 
 import java.time.LocalDateTime;
 
-public class Vehiculo {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-	private int idVehiculo;
-	private int idTonelaje;
+
+
+@Entity
+@Table(name = "VehiculoEntity")
+public class VehiculoEntity {
+	
+	@Id
+	@Column(name = "id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long idVehiculo;
+	
+	@Column(name = "placa")
 	private String placa;
+	@Column(name = "modelo")
 	private int modelo;
+	@Column(name = "soat")
 	private LocalDateTime soat;
+	@Column(name = "tecnomecanico")
 	private LocalDateTime tecnomecanico;
+	@Column(name = "capacidad")
 	private double capacidad;
+	@Column(name = "disponible")
 	private boolean disponible;
 	
-	public Vehiculo() {
+	public VehiculoEntity() {
 		
 	}
-	
-	public Vehiculo(String placa, int modelo, LocalDateTime soat, LocalDateTime tecnomecanico, double capacidad,
-			boolean disponible) {
-		this.placa = placa;
-		this.modelo = modelo;
-		this.soat = soat;
-		this.tecnomecanico = tecnomecanico;
-		this.capacidad = capacidad;
-		this.disponible = disponible;
-	}
-	public int getIdVehiculo() {
+
+	public long getIdVehiculo() {
 		return idVehiculo;
 	}
-	public void setIdVehiculo(int idVehiculo) {
+
+	public void setIdVehiculo(long idVehiculo) {
 		this.idVehiculo = idVehiculo;
 	}
-	public int getIdTonelaje() {
-		return idTonelaje;
-	}
-	public void setIdTonelaje(int idTonelaje) {
-		this.idTonelaje = idTonelaje;
-	}
+
 	public String getPlaca() {
 		return placa;
 	}
+
 	public void setPlaca(String placa) {
 		this.placa = placa;
 	}
+
 	public int getModelo() {
 		return modelo;
 	}
+
 	public void setModelo(int modelo) {
 		this.modelo = modelo;
 	}
+
 	public LocalDateTime getSoat() {
 		return soat;
 	}
+
 	public void setSoat(LocalDateTime soat) {
 		this.soat = soat;
 	}
+
 	public LocalDateTime getTecnomecanico() {
 		return tecnomecanico;
 	}
+
 	public void setTecnomecanico(LocalDateTime tecnomecanico) {
 		this.tecnomecanico = tecnomecanico;
 	}
+
 	public double getCapacidad() {
 		return capacidad;
 	}
+
 	public void setCapacidad(double capacidad) {
 		this.capacidad = capacidad;
 	}
+
 	public boolean isDisponible() {
 		return disponible;
 	}
+
 	public void setDisponible(boolean disponible) {
 		this.disponible = disponible;
 	}

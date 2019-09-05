@@ -48,6 +48,6 @@ public class ConductorTestDataBuilder {
 	}
 	
 	public Conductor build() {
-		return new Conductor(cedula, primerNombre, segundoNombre, primerApellido, segundoApellido, celular, disponible);
+		return new Conductor(cedula, primerNombre, segundoNombre, primerApellido, segundoApellido, celular);
 	}
 }

@@ -37,7 +37,6 @@ public class ConductorRepositoryImpl implements ConductorRepository {
 	@Override
 	public void eliminarConductor(Conductor conductor) {
 		repositorio.delete(mapper.map(conductor, ConductorEntity.class));
-
 	}
 
 	@Override
@@ -52,7 +51,8 @@ public class ConductorRepositoryImpl implements ConductorRepository {
 	
 	@Override
 	public boolean eliminarConductorPorCedula(String cedula) {
-		return repositorio.eliminarConductorPorCedula(cedula);
+		int resultSql = repositorio.eliminarConductorPorCedula(cedula);
+		return resultSql == 1;
 	}
 
 }

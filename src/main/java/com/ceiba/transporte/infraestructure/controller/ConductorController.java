@@ -48,8 +48,7 @@ public class ConductorController {
 	private Conductor convertConductorRequestToConductor(ConductorRequest conductorRequest) {
 		return new Conductor(conductorRequest.getCedula(), conductorRequest.getPrimerNombre(),
 				conductorRequest.getSegundoNombre(), conductorRequest.getPrimerApellido(),
-				conductorRequest.getSegundoApellido(), conductorRequest.getCelular(), 
-				conductorRequest.getDisponibleConductor());		
+				conductorRequest.getSegundoApellido(), conductorRequest.getCelular());		
 	}
 	
 }

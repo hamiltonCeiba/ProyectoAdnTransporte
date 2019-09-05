@@ -1,43 +1,17 @@
-package com.ceiba.transporte.domain.model;
+package com.ceiba.transporte.infraestructure.controller.peticion;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
-public class Vehiculo {
-
-	private int idVehiculo;
-	private int idTonelaje;
+public class VehiculoRequest implements Serializable {
+	private static final long serialVersionUID = -5075426439124835228L;
+	
 	private String placa;
 	private int modelo;
 	private LocalDateTime soat;
 	private LocalDateTime tecnomecanico;
 	private double capacidad;
 	private boolean disponible;
-	
-	public Vehiculo() {
-		
-	}
-	
-	public Vehiculo(String placa, int modelo, LocalDateTime soat, LocalDateTime tecnomecanico, double capacidad,
-			boolean disponible) {
-		this.placa = placa;
-		this.modelo = modelo;
-		this.soat = soat;
-		this.tecnomecanico = tecnomecanico;
-		this.capacidad = capacidad;
-		this.disponible = disponible;
-	}
-	public int getIdVehiculo() {
-		return idVehiculo;
-	}
-	public void setIdVehiculo(int idVehiculo) {
-		this.idVehiculo = idVehiculo;
-	}
-	public int getIdTonelaje() {
-		return idTonelaje;
-	}
-	public void setIdTonelaje(int idTonelaje) {
-		this.idTonelaje = idTonelaje;
-	}
 	public String getPlaca() {
 		return placa;
 	}
@@ -74,6 +48,10 @@ public class Vehiculo {
 	public void setDisponible(boolean disponible) {
 		this.disponible = disponible;
 	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	
 	
 	
 }

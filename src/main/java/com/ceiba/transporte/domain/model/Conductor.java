@@ -9,21 +9,19 @@ public class Conductor {
 	private String primerApellido;
 	private String segundoApellido;
 	private String celular;
-	private boolean disponible;
 	
 	public Conductor() {
 		
 	}
 	
 	public Conductor(String cedula, String primerNombre, String segundoNombre, String primerApellido,
-			String segundoApellido, String celular, boolean disponible) {
+			String segundoApellido, String celular) {
 		this.cedula = cedula;
 		this.primerNombre = primerNombre;
 		this.segundoNombre = segundoNombre;
 		this.primerApellido = primerApellido;
 		this.segundoApellido = segundoApellido;
 		this.celular = celular;
-		this.disponible = disponible;
 	}
 	public String getCedula() {
 		return cedula;
@@ -61,17 +59,5 @@ public class Conductor {
 	public void setCelular(String celular) {
 		this.celular = celular;
 	}
-	public boolean isDisponible() {
-		return disponible;
-	}
-	public void setDisponible(boolean disponible) {
-		this.disponible = disponible;
-	}
-	
-	
-	
-		
-	
-	
 
 }
