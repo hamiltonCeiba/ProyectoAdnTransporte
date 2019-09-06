@@ -53,7 +53,7 @@ public class VehiculoServiceIntegration {
 		List<Vehiculo> listVechiculo = new ArrayList<>();
 		listVechiculo.add(vehiculo);
 		//act
-		//vehiculoRepository.guardarVehiculo(vehiculo);
+		vehiculoRepository.guardarVehiculo(vehiculo);
 		List<Vehiculo> listVehiculoRec = vehiculoRepository.listarVehiculo();
 		assertTrue(listVechiculo.size() == listVehiculoRec.size());
 	}
