@@ -5,39 +5,34 @@ import java.time.LocalDateTime;
 public class Vehiculo {
 
 	private int idVehiculo;
-	private int idTonelaje;
 	private String placa;
 	private int modelo;
 	private LocalDateTime soat;
 	private LocalDateTime tecnomecanico;
 	private double capacidad;
 	private boolean disponible;
+	private Tonelaje tonelaje;
 	
 	public Vehiculo() {
 		
 	}
 	
 	public Vehiculo(String placa, int modelo, LocalDateTime soat, LocalDateTime tecnomecanico, double capacidad,
-			boolean disponible) {
+			boolean disponible,Tonelaje tonelaje) {
 		this.placa = placa;
 		this.modelo = modelo;
 		this.soat = soat;
 		this.tecnomecanico = tecnomecanico;
 		this.capacidad = capacidad;
 		this.disponible = disponible;
+		this.tonelaje = tonelaje;
 	}
 	public int getIdVehiculo() {
 		return idVehiculo;
 	}
 	public void setIdVehiculo(int idVehiculo) {
 		this.idVehiculo = idVehiculo;
-	}
-	public int getIdTonelaje() {
-		return idTonelaje;
-	}
-	public void setIdTonelaje(int idTonelaje) {
-		this.idTonelaje = idTonelaje;
-	}
+	}	
 	public String getPlaca() {
 		return placa;
 	}
@@ -74,6 +69,15 @@ public class Vehiculo {
 	public void setDisponible(boolean disponible) {
 		this.disponible = disponible;
 	}
+
+	public Tonelaje getTonelaje() {
+		return tonelaje;
+	}
+
+	public void setTonelaje(Tonelaje tonelaje) {
+		this.tonelaje = tonelaje;
+	}
+	
 	
 	
 }

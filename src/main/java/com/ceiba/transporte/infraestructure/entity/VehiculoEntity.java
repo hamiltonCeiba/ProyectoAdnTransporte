@@ -2,11 +2,14 @@ package com.ceiba.transporte.infraestructure.entity;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 
@@ -32,6 +35,9 @@ public class VehiculoEntity {
 	private double capacidad;
 	@Column(name = "disponible")
 	private boolean disponible;
+	@ManyToOne(cascade = {CascadeType.ALL})
+	@JoinColumn(name = "tonelaje", referencedColumnName = "id")
+	private TonelajeEntity tonelaje;
 	
 	public VehiculoEntity() {
 		
@@ -91,6 +97,14 @@ public class VehiculoEntity {
 
 	public void setDisponible(boolean disponible) {
 		this.disponible = disponible;
+	}
+
+	public TonelajeEntity getTonelaje() {
+		return tonelaje;
+	}
+
+	public void setTonelaje(TonelajeEntity tonelaje) {
+		this.tonelaje = tonelaje;
 	}
 	
 	

@@ -23,7 +23,6 @@ import com.ceiba.transporte.infraestructure.db.jpa.TonelajeRepositoryJPA;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class TonelajeServiceIntegrationTest {
 
-	private static final String DESCRIPCION = "";
 	private static final String RANGO = "0 - 5 TONELADAS";
 	private static final double PRECIO= 5000;
 	

@@ -12,10 +12,10 @@ public class TotalServicioService {
 	
 	public double calcularServicio(Servicio servicio) {
 		Calendar calendar = Calendar.getInstance();
-		double subTotal = calcularPrecioSegunDistancia(servicio.getDistanciaKmServ(),
-				servicio.getTonelajeServ().getPrecio());
+		double subTotal = calcularPrecioSegunDistancia(servicio.getDistanciaKm(),
+				servicio.getVehiculo().getTonelaje().getPrecio());
 		return calcularSegunDia(subTotal, calendar.get(Calendar.DAY_OF_WEEK))
-				+ calcularSegunMunicipio(subTotal, servicio.getMunicipioFinalServ());
+				+ calcularSegunMunicipio(subTotal, servicio.getMunicipioFinal());
 	}
 
 	public double calcularPrecioSegunDistancia(double distancia, double precioKm) {

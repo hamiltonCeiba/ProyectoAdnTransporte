@@ -2,6 +2,7 @@ package com.ceiba.transporte.domain.testdatabuilder;
 
 import java.time.LocalDateTime;
 
+import com.ceiba.transporte.domain.model.Tonelaje;
 import com.ceiba.transporte.domain.model.Vehiculo;
 
 public class VehiculoTestDataBuilder {
@@ -12,6 +13,7 @@ public class VehiculoTestDataBuilder {
 	private String placa;
 	private LocalDateTime soat;
 	private LocalDateTime tecnomecanica;
+	private Tonelaje tonelaje;
 
 	public VehiculoTestDataBuilder withCapacidad(double capacidad) {
 		this.capacidad = capacidad;
@@ -40,8 +42,12 @@ public class VehiculoTestDataBuilder {
 		this.tecnomecanica = tecnomecanica;
 		return this;
 	}
+	public VehiculoTestDataBuilder withTonelaje(Tonelaje tonelaje) {
+		this.tonelaje = tonelaje;
+		return this;
+	}
 	
 	public Vehiculo build() {
-		return new Vehiculo(placa,modelo,soat,tecnomecanica,capacidad,disponible);
+		return new Vehiculo(placa,modelo,soat,tecnomecanica,capacidad,disponible,tonelaje);
 	}
 }

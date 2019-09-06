@@ -3,6 +3,7 @@ package com.ceiba.transporte.infraestructure.controller.peticion;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
+
 public class VehiculoRequest implements Serializable {
 	private static final long serialVersionUID = -5075426439124835228L;
 	
@@ -12,6 +13,8 @@ public class VehiculoRequest implements Serializable {
 	private LocalDateTime tecnomecanico;
 	private double capacidad;
 	private boolean disponible;
+	private TonelajeRequest tonelaje;
+	
 	public String getPlaca() {
 		return placa;
 	}
@@ -51,7 +54,12 @@ public class VehiculoRequest implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	
-	
+	public TonelajeRequest getTonelaje() {
+		return tonelaje;
+	}
+	public void setTonelaje(TonelajeRequest tonelaje) {
+		this.tonelaje = tonelaje;
+	}
+		
 	
 }

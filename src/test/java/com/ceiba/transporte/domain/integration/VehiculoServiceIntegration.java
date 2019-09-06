@@ -20,6 +20,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.ceiba.transporte.domain.model.Tonelaje;
 import com.ceiba.transporte.domain.model.Vehiculo;
 import com.ceiba.transporte.domain.testdatabuilder.VehiculoTestDataBuilder;
 import com.ceiba.transporte.infraestructure.db.VehiculoRepositoryImpl;
@@ -77,9 +78,11 @@ public class VehiculoServiceIntegration {
 	private Vehiculo construirVehiculo() {
 		LocalDateTime soat = LocalDateTime.of(2019, Month.AUGUST, 15, 13, 0);
 		LocalDateTime tecnomecanica = LocalDateTime.of(2019, Month.AUGUST, 15, 13, 0);
+		Tonelaje tonelaje = new Tonelaje("0 - 1 tonelaje",20.5);
 		return new VehiculoTestDataBuilder().withCapacidad(CAPACIDAD)
 				.withDisponible(DISPINIBILIDAD).withModelo(MODELO)
 				.withPlaca(PLACA).withSoat(soat).withTecnomecanica(tecnomecanica)
+				.withTonelaje(tonelaje)
 				.build();
 	}
 	
