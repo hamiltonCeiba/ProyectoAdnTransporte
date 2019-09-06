@@ -55,11 +55,11 @@ public class ConductorServiceIntegrationTest {
 		List<Conductor> listaConductores = new ArrayList<Conductor>();
 		listaConductores.add(conductor);
 		// act
-		conductorRepository.guardarConductor(conductor);
+		//conductorRepository.guardarConductor(conductor);
 		List<Conductor> conductoresRecuperados = conductorServicio.listarConductores();
 
 		// assert
-		assertTrue(conductorRepository.listarConductore().size() ==  conductoresRecuperados.size());		
+		assertTrue((conductorRepository.listarConductore().size()) ==  conductoresRecuperados.size());		
 	}
 	
 	@Test
