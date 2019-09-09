@@ -12,4 +12,6 @@ public interface TonelajeRepository {
 	public void guardarTonelaje(Tonelaje tonelaje);
 	public List<Tonelaje> listarTonelaje();
 	public void eliminarTonelaje(Tonelaje tonelaje);
+	public Tonelaje obtenerTonelajePorId(long idTonelaje);
+	public void actualizarTonelaje(Tonelaje tonelaje);
 }

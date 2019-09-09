@@ -29,9 +29,9 @@ public class ConductorEntity {
 	@Column(name = "celular")
 	private String celular;
 	
-	public ConductorEntity() {
-		
-	}
+//	public ConductorEntity() {
+//		
+//	}
 
 	public long getIdConductor() {
 		return idConductor;

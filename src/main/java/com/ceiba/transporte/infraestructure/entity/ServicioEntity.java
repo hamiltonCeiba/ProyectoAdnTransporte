@@ -39,8 +39,8 @@ public class ServicioEntity {
 	@JoinColumn(name = "conductor", referencedColumnName = "id")
 	private ConductorEntity conductor;
 
-	public ServicioEntity() {
-	}
+//	public ServicioEntity() {
+//	}
 
 	public long getIdServicio() {
 		return idServicio;

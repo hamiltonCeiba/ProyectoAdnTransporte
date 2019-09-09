@@ -26,8 +26,8 @@ public class VehiculoController {
 
 	@PostMapping(value = "/crear-vehiculo")
 	public void guardarVehiculo(@RequestBody VehiculoRequest vehiculoRequest) {
-		Tonelaje tonelaje = new Tonelaje(vehiculoRequest.getTonelaje().getDescripcion(),
-				vehiculoRequest.getTonelaje().getPrecioKm());
+		Tonelaje tonelaje = new Tonelaje(vehiculoRequest.getTonelaje().getRango(),
+				vehiculoRequest.getTonelaje().getPrecio());
 		vehiculoService.guardarVehiculo(
 				ConvertirRequestAEntidades.convertVehiculoRequestToVehiculo(vehiculoRequest, tonelaje));
 	}

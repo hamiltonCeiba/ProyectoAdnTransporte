@@ -20,7 +20,7 @@ public final class ConvertirRequestAEntidades {
 	}
 	
 	public static Tonelaje convertToTonelaje(TonelajeRequest request) {
-		return new Tonelaje(request.getRango(),  request.getPrecioKm());
+		return new Tonelaje(request.getRango(),  request.getPrecio());
 	}
 	
 	public static Conductor convertConductorRequestToConductor(ConductorRequest conductorRequest) {

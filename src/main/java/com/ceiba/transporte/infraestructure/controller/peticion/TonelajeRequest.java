@@ -6,31 +6,33 @@ public class TonelajeRequest implements Serializable {
 
 	private static final long serialVersionUID = -5075426439124835227L;
 	
+	private int id;
 	private String rango;
-	private String descripcion;
-	private double precioKm;
+	private double precio;
 	
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getRango() {
 		return rango;
 	}
 	public void setRango(String rango) {
 		this.rango = rango;
 	}
-	public String getDescripcion() {
-		return descripcion;
-	}
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
-	}
-	public double getPrecioKm() {
-		return precioKm;
-	}
-	public void setPrecioKm(double  precioKm) {
-		this.precioKm = precioKm;
-	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+	public double getPrecio() {
+		return precio;
+	}
+	public void setPrecio(double precio) {
+		this.precio = precio;
+	}
+	
 	
 	
 }

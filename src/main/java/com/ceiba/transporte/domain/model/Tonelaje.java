@@ -2,9 +2,21 @@ package com.ceiba.transporte.domain.model;
 
 public class Tonelaje {
 
+	private Long id;
 	private String rango;
 	private double precio;	
 	
+	
+
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
 	public Tonelaje() {
 		
 	}

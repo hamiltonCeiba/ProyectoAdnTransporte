@@ -17,39 +17,55 @@ public class TonelajeRepositoryImpl implements TonelajeRepository {
 
 	@Autowired
 	private TonelajeRepositoryJPA repositorio;
-	
+
 	@Autowired
 	private ModelMapper modelMapper;
-	
-	public TonelajeRepositoryImpl(TonelajeRepositoryJPA repositorio,ModelMapper modelMapper) {
+
+	public TonelajeRepositoryImpl(TonelajeRepositoryJPA repositorio, ModelMapper modelMapper) {
 		super();
 		this.repositorio = repositorio;
 		this.modelMapper = modelMapper;
 	}
-	
+
 	@Override
 	public void guardarTonelaje(Tonelaje tonelaje) {
-		repositorio.save(convertToEntity(tonelaje));		
+		repositorio.save(convertToEntity(tonelaje));
 	}
 
 	@Override
 	public List<Tonelaje> listarTonelaje() {
 		List<TonelajeEntity> listEntity = repositorio.findAll();
 		List<Tonelaje> listTonelaje = new ArrayList<>();
-		listEntity.forEach(entity->{listTonelaje.add(convertToTonelaje(entity));});
+		listEntity.forEach(entity -> {
+			listTonelaje.add(convertToTonelaje(entity));
+		});
 		return listTonelaje;
 	}
 
 	@Override
 	public void eliminarTonelaje(Tonelaje tonelaje) {
-		repositorio.delete(convertToEntity(tonelaje));		
+		repositorio.delete(convertToEntity(tonelaje));
 	}
-	
+
 	private TonelajeEntity convertToEntity(Tonelaje tonelaje) {
 		return modelMapper.map(tonelaje, TonelajeEntity.class);
 	}
+
 	private Tonelaje convertToTonelaje(TonelajeEntity tonelaje) {
 		return modelMapper.map(tonelaje, Tonelaje.class);
 	}
+
+	@Override
+	public Tonelaje obtenerTonelajePorId(long idTonelaje) {
+		return convertToTonelaje(repositorio.buscarPorId(idTonelaje));
+	}
+
+	@Override
+	public void actualizarTonelaje(Tonelaje tonelaje) {
+		repositorio.deleteById(tonelaje.getId());
+		repositorio.save(convertToEntity(tonelaje));		
+	}
+	
+	
 
 }

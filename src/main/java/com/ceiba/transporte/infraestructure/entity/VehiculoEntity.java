@@ -39,9 +39,9 @@ public class VehiculoEntity {
 	@JoinColumn(name = "tonelaje", referencedColumnName = "id")
 	private TonelajeEntity tonelaje;
 	
-	public VehiculoEntity() {
-		
-	}
+//	public VehiculoEntity() {
+//		
+//	}
 
 	public long getIdVehiculo() {
 		return idVehiculo;
