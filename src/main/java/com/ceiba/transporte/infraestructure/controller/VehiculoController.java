@@ -7,6 +7,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,7 +18,7 @@ import com.ceiba.transporte.infraestructure.controller.peticion.VehiculoRequest;
 import com.ceiba.transporte.infraestructure.controller.utilidad.ConvertirRequestAEntidades;
 
 @RestController
-@RequestMapping(value = "/transporte/vehiculo", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/transporte/vehiculo",  produces = MediaType.APPLICATION_JSON_VALUE)
 
 public class VehiculoController {
 
@@ -37,8 +38,9 @@ public class VehiculoController {
 	public void eliminarVehiculo(@RequestBody String placa) {
 		vehiculoService.eliminarVehiculo(placa);
 	}
-
-	@PostMapping(value = "/listar-vehiculo")
+	
+	@RequestMapping(value = "/listar-vehiculo",
+	method=RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
 	public @ResponseBody List<Vehiculo> listarVehiculo() {
 		return vehiculoService.listarVehiculo();
 	}
