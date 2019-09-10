@@ -39,15 +39,18 @@ public class TonelajeController {
 	public void eliminarTonelaje(@RequestBody TonelajeRequest tonelaje) {
 		tonelajeService.eliminarTonelaje(ConvertirRequestAEntidades.convertToTonelaje(tonelaje));
 	}
-
-	/*
-	 * private Tonelaje convertToTonelaje(TonelajeRequest request) { return new
-	 * Tonelaje(request.getRango(), request.getPrecioKm()); }
-	 */
+	
 	@RequestMapping(value = "/buscar-tonelaje-id",
 			method=RequestMethod.PUT,produces = MediaType.APPLICATION_JSON_VALUE)
 	public Tonelaje buscarTonelajePorId(@RequestBody TonelajeRequest tonelaje){
 		return tonelajeService.buscartTonelajePorId(tonelaje.getId()); 
 	}
+	
+	@RequestMapping(value = "/editar-tonelaje",
+			method=RequestMethod.PUT,produces = MediaType.APPLICATION_JSON_VALUE)
+	public Tonelaje editarTonelaje(@RequestBody TonelajeRequest tonelaje){
+		return tonelajeService.buscartTonelajePorId(tonelaje.getId()); 
+	}
+	
 
 }
