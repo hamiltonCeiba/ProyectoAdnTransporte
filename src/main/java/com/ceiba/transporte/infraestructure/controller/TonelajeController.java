@@ -36,7 +36,8 @@ public class TonelajeController {
 		tonelajeService.guardarTonelaje(ConvertirRequestAEntidades.convertToTonelaje(tonelaje));
 	}
 
-	@DeleteMapping(value = "/eliminar-tonelaje", consumes =MediaType.APPLICATION_JSON_VALUE,  produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/eliminar-tonelaje", consumes =MediaType.APPLICATION_JSON_VALUE,
+			method=RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
 	public void eliminarTonelaje(@RequestBody TonelajeRequest tonelaje) {
 		tonelajeService.eliminarTonelaje(ConvertirRequestAEntidades.convertToTonelaje(tonelaje));
 	}
