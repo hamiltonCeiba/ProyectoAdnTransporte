@@ -88,7 +88,7 @@ public class ServicioServiceIntegrationTest {
 		LocalDateTime soat = LocalDateTime.of(2019, Month.AUGUST, 15, 13, 0);
 		LocalDateTime tecnomecanica = LocalDateTime.of(2019, Month.AUGUST, 15, 13, 0);
 		Conductor conductor = new Conductor(CEDULA,PRIMER_NOMBRE,SEGUNDO_NOMBRE,PRIMER_APELLIDO,SEGUNDO_APELLIDO,CELULAR);
-		Tonelaje tonelaje = new Tonelaje(RANGO, PRECIO);
+		Tonelaje tonelaje = new Tonelaje(1,RANGO, PRECIO);
 		Vehiculo vehiculo = new Vehiculo(PLACA, MODELO, soat, tecnomecanica, CAPACIDAD, DISPINIBILIDAD, tonelaje); 
 		return new ServicioTestDataBuilder().withConductor(conductor).withVehiculo(vehiculo).withDireccionFinal("").build();
 	}
