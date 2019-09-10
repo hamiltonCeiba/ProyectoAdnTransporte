@@ -35,7 +35,7 @@ public class VehiculoEntity {
 	private double capacidad;
 	@Column(name = "disponible")
 	private boolean disponible;
-	@ManyToOne(cascade = {CascadeType.ALL})
+	@ManyToOne()
 	@JoinColumn(name = "tonelaje", referencedColumnName = "id")
 	private TonelajeEntity tonelaje;
 	

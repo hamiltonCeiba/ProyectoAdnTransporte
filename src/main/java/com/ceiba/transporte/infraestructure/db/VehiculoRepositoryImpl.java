@@ -54,7 +54,8 @@ public class VehiculoRepositoryImpl implements VehiculoRepository{
 
 	
 	private VehiculoEntity convertToEntity(Vehiculo vehiculo) {
-		return mapper.map(vehiculo,VehiculoEntity.class);		
+		VehiculoEntity entity =mapper.map(vehiculo,VehiculoEntity.class); 
+		return 	entity;
 	}
 	
 	private Vehiculo convertToVehiculo(VehiculoEntity entity) {
