@@ -6,15 +6,15 @@ public class TonelajeRequest implements Serializable {
 
 	private static final long serialVersionUID = -5075426439124835227L;
 	
-	private int id;
+	private Long id;
 	private String rango;
 	private double precio;
 	
 	
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getRango() {

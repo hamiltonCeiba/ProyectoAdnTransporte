@@ -25,6 +25,7 @@ public class TonelajeServiceIntegrationTest {
 
 	private static final String RANGO = "0 - 5 TONELADAS";
 	private static final double PRECIO= 5000;
+	private static final Long ID = (long) 10.0;
 	
 	@Autowired
 	private TonelajeRepositoryJPA repositoryJpa;
@@ -51,6 +52,6 @@ public class TonelajeServiceIntegrationTest {
 	}
 	
 	private Tonelaje construirTonelaje() {
-		return new TonelajeTestDataBuilder().withRango(RANGO).withPrecio(PRECIO).build();
+		return new TonelajeTestDataBuilder().withRango(RANGO).withPrecio(PRECIO).withId(ID).build();
 	}
 }

@@ -79,7 +79,7 @@ public class VehiculoServiceIntegration {
 	private Vehiculo construirVehiculo() {
 		LocalDateTime soat = LocalDateTime.of(2019, Month.AUGUST, 15, 13, 0);
 		LocalDateTime tecnomecanica = LocalDateTime.of(2019, Month.AUGUST, 15, 13, 0);
-		Tonelaje tonelaje = new Tonelaje("0 - 1 tonelaje",20.5);
+		Tonelaje tonelaje = new Tonelaje(1,"0 - 1 tonelaje",20.5);
 		return new VehiculoTestDataBuilder().withCapacidad(CAPACIDAD)
 				.withDisponible(DISPINIBILIDAD).withModelo(MODELO)
 				.withPlaca(PLACA).withSoat(soat).withTecnomecanica(tecnomecanica)

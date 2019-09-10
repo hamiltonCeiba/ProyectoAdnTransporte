@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,7 +36,7 @@ public class TonelajeController {
 		tonelajeService.guardarTonelaje(ConvertirRequestAEntidades.convertToTonelaje(tonelaje));
 	}
 
-	@PostMapping(value = "/eliminar-tonelaje")
+	@DeleteMapping(value = "/eliminar-tonelaje", consumes =MediaType.APPLICATION_JSON_VALUE,  produces = MediaType.APPLICATION_JSON_VALUE)
 	public void eliminarTonelaje(@RequestBody TonelajeRequest tonelaje) {
 		tonelajeService.eliminarTonelaje(ConvertirRequestAEntidades.convertToTonelaje(tonelaje));
 	}
@@ -48,9 +49,15 @@ public class TonelajeController {
 	
 	@RequestMapping(value = "/editar-tonelaje",
 			method=RequestMethod.PUT,produces = MediaType.APPLICATION_JSON_VALUE)
+/*
 	public Tonelaje editarTonelaje(@RequestBody TonelajeRequest tonelaje){
 		return tonelajeService.buscartTonelajePorId(tonelaje.getId()); 
 	}
 	
+*/
+	public Tonelaje editarTonelaje(@RequestBody TonelajeRequest tonelaje) {
+		return tonelajeService.actualizarTonelaje(ConvertirRequestAEntidades.convertToTonelaje(tonelaje));
+	}
+
 
 }

@@ -44,7 +44,7 @@ public class TonelajeRepositoryImpl implements TonelajeRepository {
 
 	@Override
 	public void eliminarTonelaje(Tonelaje tonelaje) {
-		repositorio.delete(convertToEntity(tonelaje));
+		repositorio.deleteById(tonelaje.getId());
 	}
 
 	private TonelajeEntity convertToEntity(Tonelaje tonelaje) {
@@ -61,9 +61,9 @@ public class TonelajeRepositoryImpl implements TonelajeRepository {
 	}
 
 	@Override
-	public void actualizarTonelaje(Tonelaje tonelaje) {
+	public Tonelaje actualizarTonelaje(Tonelaje tonelaje) {
 		repositorio.deleteById(tonelaje.getId());
-		repositorio.save(convertToEntity(tonelaje));		
+		return convertToTonelaje(repositorio.save(convertToEntity(tonelaje)));		
 	}
 	
 	

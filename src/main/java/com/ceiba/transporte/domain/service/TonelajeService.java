@@ -34,4 +34,8 @@ public class TonelajeService {
 	public Tonelaje buscartTonelajePorId(long idTonelaje) {
 		return tonelajeRepository.obtenerTonelajePorId(idTonelaje);
 	}
+	
+	public Tonelaje actualizarTonelaje(Tonelaje tonelaje) {
+		return tonelajeRepository.actualizarTonelaje(tonelaje);
+	}
 }
