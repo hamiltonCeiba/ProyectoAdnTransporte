@@ -19,6 +19,8 @@ public class ServicioService {
 	}
 
 	public void guardarServicio(Servicio servicio) {
+		TotalServicioService calcular = new TotalServicioService();
+		servicio.setTotalServicio(calcular.calcularServicio(servicio));
 		servicioRepository.guardarServicio(servicio);
 	}
 

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ceiba.transporte.domain.model.Tonelaje;
+
 import com.ceiba.transporte.domain.model.Vehiculo;
 import com.ceiba.transporte.domain.service.VehiculoService;
 import com.ceiba.transporte.infraestructure.controller.peticion.VehiculoRequest;
@@ -26,12 +26,9 @@ public class VehiculoController {
 	VehiculoService vehiculoService;
 
 	@PostMapping(value = "/crear-vehiculo")
-	public void guardarVehiculo(@RequestBody VehiculoRequest vehiculoRequest) {
-		Tonelaje tonelaje = new Tonelaje(vehiculoRequest.getTonelaje().getId(),
-				vehiculoRequest.getTonelaje().getRango(),
-				vehiculoRequest.getTonelaje().getPrecio());
+	public void guardarVehiculo(@RequestBody VehiculoRequest vehiculoRequest) {		
 		vehiculoService.guardarVehiculo(
-				ConvertirRequestAEntidades.convertVehiculoRequestToVehiculo(vehiculoRequest, tonelaje));
+				ConvertirRequestAEntidades.convertVehiculoRequestToVehiculo(vehiculoRequest));
 	}
 
 	
@@ -44,15 +41,15 @@ public class VehiculoController {
 	@RequestMapping(value = "/eliminar-vehiculo", consumes =MediaType.APPLICATION_JSON_VALUE,
 			method=RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
 	public void eliminarVehiculo(@RequestBody VehiculoRequest vehiculo) {
-		Tonelaje tonelaje = ConvertirRequestAEntidades.convertToTonelaje(vehiculo.getTonelaje());
-		vehiculoService.eliminarVehiculo(ConvertirRequestAEntidades.convertVehiculoRequestToVehiculo(vehiculo,tonelaje));
+		//Tonelaje tonelaje = ConvertirRequestAEntidades.convertToTonelaje(vehiculo.getTonelaje());
+		vehiculoService.eliminarVehiculo(ConvertirRequestAEntidades.convertVehiculoRequestToVehiculo(vehiculo));
 	}
 	
 	@RequestMapping(value = "/editar-vehiculo",
 			method=RequestMethod.PUT,produces = MediaType.APPLICATION_JSON_VALUE)
 	public Vehiculo editarVehiculo(@RequestBody VehiculoRequest vehiculo) {
-		Tonelaje tonelaje = ConvertirRequestAEntidades.convertToTonelaje(vehiculo.getTonelaje());
-		return vehiculoService.actualizarVehiculo(ConvertirRequestAEntidades.convertVehiculoRequestToVehiculo(vehiculo, tonelaje));
+		//Tonelaje tonelaje = ConvertirRequestAEntidades.convertToTonelaje(vehiculo.getTonelaje());
+		return vehiculoService.actualizarVehiculo(ConvertirRequestAEntidades.convertVehiculoRequestToVehiculo(vehiculo));
 	}
 
 	

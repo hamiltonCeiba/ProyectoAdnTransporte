@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ceiba.transporte.domain.model.Servicio;
+import com.ceiba.transporte.domain.model.Tonelaje;
 import com.ceiba.transporte.domain.service.ServicioService;
+import com.ceiba.transporte.domain.service.TonelajeService;
 import com.ceiba.transporte.infraestructure.controller.peticion.ServicioRequest;
 import com.ceiba.transporte.infraestructure.controller.utilidad.ConvertirRequestAEntidades;
 
@@ -24,6 +26,8 @@ public class ServicioController {
 
 	@Autowired
 	ServicioService servicioService;
+	@Autowired
+	TonelajeService tonelajeService;
 
 	@PostMapping(value = "crear-servicio")
 	public void crearServicio(@RequestBody ServicioRequest servicio) {
@@ -47,5 +51,9 @@ public class ServicioController {
 	 * ,ConvertirRequestAEntidades.convertConductorRequestToConductor(request.
 	 * getConductor())); }
 	 */
+	
+	private Tonelaje obtenerTonelajePorId(int idTonelaje) {
+		return tonelajeService.buscartTonelajePorId(idTonelaje);
+	}
 
 }

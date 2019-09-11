@@ -7,7 +7,7 @@ public class Servicio {
 	private String direccionInicial;
 	private String direccionFinal;
 	private String municipioFinal;
-	private double totalServ;
+	private double totalServicio;
 	private Vehiculo vehiculo;
 	private Conductor conductor;
 	
@@ -16,32 +16,23 @@ public class Servicio {
 	}
 	
 	
-	
 	public Servicio(double distanciaKm, String direccionInicial, String direccionFinal, String municipioFinal,
 			double totalServ, Vehiculo vehiculo, Conductor conductor) {
-		super();
 		this.distanciaKm = distanciaKm;
 		this.direccionInicial = direccionInicial;
 		this.direccionFinal = direccionFinal;
 		this.municipioFinal = municipioFinal;
-		this.totalServ = totalServ;
+		this.totalServicio = totalServ;
 		this.vehiculo = vehiculo;
 		this.conductor = conductor;
 	}
 
-
-
 	public int getIdServicio() {
 		return idServicio;
 	}
+
 	public void setIdServicio(int idServicio) {
 		this.idServicio = idServicio;
-	}	
-	public double getTotalServ() {
-		return totalServ;
-	}
-	public void setTotalServ(float totalServ) {
-		this.totalServ = totalServ;
 	}
 
 	public double getDistanciaKm() {
@@ -76,10 +67,17 @@ public class Servicio {
 		this.municipioFinal = municipioFinal;
 	}
 
+	public double getTotalServicio() {
+		return totalServicio;
+	}
+
+	public void setTotalServicio(double totalServicio) {
+		this.totalServicio = totalServicio;
+	}
+
 	public Vehiculo getVehiculo() {
 		return vehiculo;
 	}
-
 	public void setVehiculo(Vehiculo vehiculo) {
 		this.vehiculo = vehiculo;
 	}
@@ -92,11 +90,5 @@ public class Servicio {
 		this.conductor = conductor;
 	}
 
-	public void setTotalServ(double totalServ) {
-		this.totalServ = totalServ;
-	}
-
-	
-	
 	
 }

@@ -1,6 +1,5 @@
 package com.ceiba.transporte.infraestructure.entity;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,7 +19,7 @@ public class ServicioEntity {
 	private long idServicio;
 
 	@Column(name = "distancia")
-	private String distancia;
+	private String distanciaKm;
 
 	@Column(name = "direccion_inicial")
 	private String direccionInicial;
@@ -29,13 +28,13 @@ public class ServicioEntity {
 	@Column(name = "municipio_final")
 	private String municipioFinal;
 	@Column(name = "total_servicio")
-	private double totalServcio;
+	private double totalServicio;
 
-	@ManyToOne(cascade = {CascadeType.ALL})
+	@ManyToOne()
 	@JoinColumn(name = "vehiculo", referencedColumnName = "id")
 	private VehiculoEntity vehiculo;
 
-	@ManyToOne(cascade = {CascadeType.ALL})
+	@ManyToOne()
 	@JoinColumn(name = "conductor", referencedColumnName = "id")
 	private ConductorEntity conductor;
 
@@ -50,12 +49,13 @@ public class ServicioEntity {
 		this.idServicio = idServicio;
 	}
 
-	public String getDistancia() {
-		return distancia;
+	
+	public String getDistanciaKm() {
+		return distanciaKm;
 	}
 
-	public void setDistancia(String distancia) {
-		this.distancia = distancia;
+	public void setDistanciaKm(String distanciaKm) {
+		this.distanciaKm = distanciaKm;
 	}
 
 	public String getDireccionInicial() {
@@ -80,14 +80,14 @@ public class ServicioEntity {
 
 	public void setMunicipioFinal(String municipioFinal) {
 		this.municipioFinal = municipioFinal;
+	}	
+
+	public double getTotalServicio() {
+		return totalServicio;
 	}
 
-	public double getTotalServcio() {
-		return totalServcio;
-	}
-
-	public void setTotalServcio(double totalServcio) {
-		this.totalServcio = totalServcio;
+	public void setTotalServicio(double totalServicio) {
+		this.totalServicio = totalServicio;
 	}
 
 	public VehiculoEntity getVehiculo() {

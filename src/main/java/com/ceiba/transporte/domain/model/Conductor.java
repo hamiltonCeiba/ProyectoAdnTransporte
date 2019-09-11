@@ -2,7 +2,7 @@ package com.ceiba.transporte.domain.model;
 
 public class Conductor {
 
-		
+	private Long id;
 	private String cedula;
 	private String primerNombre;
 	private String segundoNombre;
@@ -14,8 +14,9 @@ public class Conductor {
 		
 	}
 	
-	public Conductor(String cedula, String primerNombre, String segundoNombre, String primerApellido,
+	public Conductor(Long id,String cedula, String primerNombre, String segundoNombre, String primerApellido,
 			String segundoApellido, String celular) {
+		this.id = id;
 		this.cedula = cedula;
 		this.primerNombre = primerNombre;
 		this.segundoNombre = segundoNombre;
@@ -60,4 +61,13 @@ public class Conductor {
 		this.celular = celular;
 	}
 
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	
 }

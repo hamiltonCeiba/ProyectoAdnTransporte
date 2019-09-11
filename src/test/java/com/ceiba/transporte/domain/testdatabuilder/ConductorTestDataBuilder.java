@@ -3,7 +3,7 @@ package com.ceiba.transporte.domain.testdatabuilder;
 import com.ceiba.transporte.domain.model.Conductor;
 
 public class ConductorTestDataBuilder {
-
+	private Long id;
 	private String cedula;
 	private String primerNombre;
 	private String segundoNombre;
@@ -40,9 +40,12 @@ public class ConductorTestDataBuilder {
 		this.celular = celular;
 		return this;
 	}	
-	
+	public ConductorTestDataBuilder withId(Long id) {
+		this.id = id;
+		return this;
+	}
 	
 	public Conductor build() {
-		return new Conductor(cedula, primerNombre, segundoNombre, primerApellido, segundoApellido, celular);
+		return new Conductor(id,cedula, primerNombre, segundoNombre, primerApellido, segundoApellido, celular);
 	}
 }

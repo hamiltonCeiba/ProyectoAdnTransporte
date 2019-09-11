@@ -17,8 +17,9 @@ public class Vehiculo {
 		
 	}
 	
-	public Vehiculo(String placa, int modelo, LocalDateTime soat, LocalDateTime tecnomecanico, double capacidad,
+	public Vehiculo(Long idVehiculo,String placa, int modelo, LocalDateTime soat, LocalDateTime tecnomecanico, double capacidad,
 			boolean disponible,Tonelaje tonelaje) {
+		this.idVehiculo = idVehiculo;
 		this.placa = placa;
 		this.modelo = modelo;
 		this.soat = soat;

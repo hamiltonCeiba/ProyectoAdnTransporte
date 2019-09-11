@@ -7,6 +7,7 @@ import com.ceiba.transporte.domain.model.Vehiculo;
 
 public class VehiculoTestDataBuilder {
 
+	private Long idVehiculo;
 	private double capacidad;
 	private boolean disponible;
 	private int modelo;
@@ -46,8 +47,12 @@ public class VehiculoTestDataBuilder {
 		this.tonelaje = tonelaje;
 		return this;
 	}
+	public VehiculoTestDataBuilder withIdVehiculo(Long idVehiculo) {
+		this.idVehiculo = idVehiculo;
+		return this;
+	}
 	
 	public Vehiculo build() {
-		return new Vehiculo(placa,modelo,soat,tecnomecanica,capacidad,disponible,tonelaje);
+		return new Vehiculo(idVehiculo,placa,modelo,soat,tecnomecanica,capacidad,disponible,tonelaje);
 	}
 }

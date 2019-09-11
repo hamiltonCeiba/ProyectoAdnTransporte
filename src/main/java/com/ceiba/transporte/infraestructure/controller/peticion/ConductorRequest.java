@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class ConductorRequest implements Serializable {
 	private static final long serialVersionUID = -5075426439124835229L;
 	
-	
+	private Long id;
     private String cedula;
     private String primerNombre;
     private String segundoNombre;
@@ -58,6 +58,12 @@ public class ConductorRequest implements Serializable {
 	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;
+	}
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
 	}
     
     

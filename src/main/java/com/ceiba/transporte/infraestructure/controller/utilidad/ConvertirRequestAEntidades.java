@@ -11,12 +11,13 @@ import com.ceiba.transporte.infraestructure.controller.peticion.VehiculoRequest;
 
 public final class ConvertirRequestAEntidades {
 
-	public static Vehiculo convertVehiculoRequestToVehiculo(VehiculoRequest vehiculoRequest,Tonelaje tonelaje) {
-		return new Vehiculo(vehiculoRequest.getPlaca(), 
+	public static Vehiculo convertVehiculoRequestToVehiculo(VehiculoRequest vehiculoRequest) {
+		
+		return new Vehiculo(vehiculoRequest.getIdVehiculo(), vehiculoRequest.getPlaca(), 
 				vehiculoRequest.getModelo(), vehiculoRequest.getSoat(),
 				vehiculoRequest.getTecnomecanico(),
 				vehiculoRequest.getCapacidad(), vehiculoRequest.isDisponible(),
-				tonelaje);
+				convertToTonelaje(vehiculoRequest.getTonelaje()));
 	}
 	
 	public static Tonelaje convertToTonelaje(TonelajeRequest request) {
@@ -24,7 +25,7 @@ public final class ConvertirRequestAEntidades {
 	}
 	
 	public static Conductor convertConductorRequestToConductor(ConductorRequest conductorRequest) {
-		return new Conductor(conductorRequest.getCedula(), conductorRequest.getPrimerNombre(),
+		return new Conductor(conductorRequest.getId(),conductorRequest.getCedula(), conductorRequest.getPrimerNombre(),
 				conductorRequest.getSegundoNombre(), conductorRequest.getPrimerApellido(),
 				conductorRequest.getSegundoApellido(), conductorRequest.getCelular());		
 	}
@@ -35,7 +36,7 @@ public final class ConvertirRequestAEntidades {
 				,request.getDireccionFinal()
 				,request.getMunicipioFinal()
 				,request.getTotalServ()
-				,ConvertirRequestAEntidades.convertVehiculoRequestToVehiculo(request.getVehiculo(),ConvertirRequestAEntidades.convertToTonelaje(request.getVehiculo().getTonelaje()))
+				,ConvertirRequestAEntidades.convertVehiculoRequestToVehiculo(request.getVehiculo())
 				,ConvertirRequestAEntidades.convertConductorRequestToConductor(request.getConductor()));
 	}
 }
