@@ -7,6 +7,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,7 +17,7 @@ import com.ceiba.transporte.infraestructure.controller.peticion.ConductorRequest
 import com.ceiba.transporte.infraestructure.controller.utilidad.ConvertirRequestAEntidades;
 
 @RestController
-@RequestMapping(value = "/transporte/conductor", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/transporte/conductor", produces = MediaType.APPLICATION_JSON_VALUE)
 public class ConductorController {
 
 	@Autowired
@@ -34,7 +35,8 @@ public class ConductorController {
 		conductorService.eliminarConductor(conductor);
 	}
 
-	@PostMapping(value = "/listar-conductor")
+	@RequestMapping(value = "/listar-conductor",
+			method=RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
 	public @ResponseBody List<Conductor> listarConductores() {
 		return conductorService.listarConductores();
 

@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ceiba.transporte.domain.model.Tonelaje;
 import com.ceiba.transporte.domain.model.Vehiculo;
 import com.ceiba.transporte.domain.service.VehiculoService;
-import com.ceiba.transporte.infraestructure.controller.peticion.TonelajeRequest;
 import com.ceiba.transporte.infraestructure.controller.peticion.VehiculoRequest;
 import com.ceiba.transporte.infraestructure.controller.utilidad.ConvertirRequestAEntidades;
 
@@ -35,10 +34,6 @@ public class VehiculoController {
 				ConvertirRequestAEntidades.convertVehiculoRequestToVehiculo(vehiculoRequest, tonelaje));
 	}
 
-	/*@PostMapping(value = "/eliminar-vehiculo")
-	public void eliminarVehiculo(@RequestBody String placa) {
-		vehiculoService.eliminarVehiculo(placa);
-	}*/
 	
 	@RequestMapping(value = "/listar-vehiculo",
 	method=RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)

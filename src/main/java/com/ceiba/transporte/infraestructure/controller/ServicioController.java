@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,7 +19,7 @@ import com.ceiba.transporte.infraestructure.controller.utilidad.ConvertirRequest
 
 @CrossOrigin
 @RestController
-@RequestMapping(value = "/transporte/servicio", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/transporte/servicio", produces = MediaType.APPLICATION_JSON_VALUE)
 public class ServicioController {
 
 	@Autowired
@@ -29,7 +30,8 @@ public class ServicioController {
 		servicioService.guardarServicio(ConvertirRequestAEntidades.convertRequestToService(servicio));
 	}
 
-	@PostMapping(value = "listar-servicio")
+	@RequestMapping(value = "listar-servicio",
+			method=RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
 	public @ResponseBody List<Servicio> listarServicio() {
 		return servicioService.listarTodoServicios();
 	}
