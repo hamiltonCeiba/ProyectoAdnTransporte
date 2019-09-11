@@ -69,4 +69,21 @@ public class VehiculoRepositoryImpl implements VehiculoRepository{
 			});
 		return listaVehiculos;
 	}
+
+	@Override
+	public void eliminarVehiculo(Vehiculo vehiculo) {
+		repositorio.deleteById(vehiculo.getIdVehiculo());
+		
+	}
+
+	@Override
+	public Vehiculo actualizarVehiculo(Vehiculo vehiculo) {
+		repositorio.deleteById(vehiculo.getIdVehiculo());
+		return convertToVehiculo(repositorio.save(convertToEntity(vehiculo)));
+	}
+
+	@Override
+	public Vehiculo buscarVehiculoPorId(long idVehiculo) {
+		return convertToVehiculo(repositorio.buscarVehiculoPorId(idVehiculo));
+	}
 }

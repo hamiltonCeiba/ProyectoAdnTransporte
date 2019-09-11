@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 
 public class Vehiculo {
 
-	private int idVehiculo;
+	private Long idVehiculo;
 	private String placa;
 	private int modelo;
 	private LocalDateTime soat;
@@ -27,10 +27,10 @@ public class Vehiculo {
 		this.disponible = disponible;
 		this.tonelaje = tonelaje;
 	}
-	public int getIdVehiculo() {
+	public Long getIdVehiculo() {
 		return idVehiculo;
 	}
-	public void setIdVehiculo(int idVehiculo) {
+	public void setIdVehiculo(Long idVehiculo) {
 		this.idVehiculo = idVehiculo;
 	}	
 	public String getPlaca() {

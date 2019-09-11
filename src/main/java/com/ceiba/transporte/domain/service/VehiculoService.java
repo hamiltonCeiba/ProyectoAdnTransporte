@@ -35,4 +35,16 @@ public class VehiculoService {
 		return vehiculoRepository.listarVehiculo();
 	}
 	
+	public void eliminarVehiculo(Vehiculo vehiculo) {
+		vehiculoRepository.eliminarVehiculo(vehiculo);
+	}
+	
+	public Vehiculo actualizarVehiculo(Vehiculo vehiculo) {
+		return vehiculoRepository.actualizarVehiculo(vehiculo);
+	}
+	
+	public Vehiculo buscarVehiculoPorId(long idVehiculo) {
+		return vehiculoRepository.buscarVehiculoPorId(idVehiculo);
+	}
+	
 }

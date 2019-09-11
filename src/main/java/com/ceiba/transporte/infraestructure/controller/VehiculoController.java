@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ceiba.transporte.domain.model.Tonelaje;
 import com.ceiba.transporte.domain.model.Vehiculo;
 import com.ceiba.transporte.domain.service.VehiculoService;
+import com.ceiba.transporte.infraestructure.controller.peticion.TonelajeRequest;
 import com.ceiba.transporte.infraestructure.controller.peticion.VehiculoRequest;
 import com.ceiba.transporte.infraestructure.controller.utilidad.ConvertirRequestAEntidades;
 
@@ -34,17 +35,38 @@ public class VehiculoController {
 				ConvertirRequestAEntidades.convertVehiculoRequestToVehiculo(vehiculoRequest, tonelaje));
 	}
 
-	@PostMapping(value = "/eliminar-vehiculo")
+	/*@PostMapping(value = "/eliminar-vehiculo")
 	public void eliminarVehiculo(@RequestBody String placa) {
 		vehiculoService.eliminarVehiculo(placa);
-	}
+	}*/
 	
 	@RequestMapping(value = "/listar-vehiculo",
 	method=RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
 	public @ResponseBody List<Vehiculo> listarVehiculo() {
 		return vehiculoService.listarVehiculo();
 	}
+	
+	@RequestMapping(value = "/eliminar-vehiculo", consumes =MediaType.APPLICATION_JSON_VALUE,
+			method=RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
+	public void eliminarVehiculo(@RequestBody VehiculoRequest vehiculo) {
+		Tonelaje tonelaje = ConvertirRequestAEntidades.convertToTonelaje(vehiculo.getTonelaje());
+		vehiculoService.eliminarVehiculo(ConvertirRequestAEntidades.convertVehiculoRequestToVehiculo(vehiculo,tonelaje));
+	}
+	
+	@RequestMapping(value = "/editar-vehiculo",
+			method=RequestMethod.PUT,produces = MediaType.APPLICATION_JSON_VALUE)
+	public Vehiculo editarVehiculo(@RequestBody VehiculoRequest vehiculo) {
+		Tonelaje tonelaje = ConvertirRequestAEntidades.convertToTonelaje(vehiculo.getTonelaje());
+		return vehiculoService.actualizarVehiculo(ConvertirRequestAEntidades.convertVehiculoRequestToVehiculo(vehiculo, tonelaje));
+	}
 
+	
+	@RequestMapping(value = "/buscar-vehiculo-id",
+			method=RequestMethod.PUT,produces = MediaType.APPLICATION_JSON_VALUE)
+	public Vehiculo buscarTonelajePorId(@RequestBody VehiculoRequest vehiculo){
+		return vehiculoService.buscarVehiculoPorId(vehiculo.getIdVehiculo()); 
+	}
+	
 	/*
 	 * private Vehiculo convertVehiculoRequestToVehiculo(VehiculoRequest
 	 * vehiculoRequest,Tonelaje tonelaje) { return new

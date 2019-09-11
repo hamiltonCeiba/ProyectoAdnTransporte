@@ -10,4 +10,7 @@ public interface VehiculoRepository {
 	public List<Vehiculo> listarVehiculo();
 	public List<Vehiculo> listarVehiculosDisponibles();
 	public List<Vehiculo> listarVehiculosNoDisponibles();
+	public void eliminarVehiculo(Vehiculo vehiculo);
+	public Vehiculo actualizarVehiculo(Vehiculo vehiculo);
+	public Vehiculo buscarVehiculoPorId(long idVehiculo);
 }

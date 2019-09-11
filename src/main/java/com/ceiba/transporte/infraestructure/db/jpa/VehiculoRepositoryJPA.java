@@ -13,6 +13,9 @@ public interface VehiculoRepositoryJPA extends JpaRepository<VehiculoEntity, Lon
 	@Query("SELECT c FROM VehiculoEntity c where c.placa = :placa")
 	VehiculoEntity buscarVehiculoPorPlaca(@Param(value = "placa")String placa);
 	
+	@Query("SELECT c FROM VehiculoEntity c where c.id = :id")
+	VehiculoEntity buscarVehiculoPorId(@Param(value = "id")long id);
+	
 //	@Query("SELECT c FROM VehiculoEntity where c.disponible = :param")
 //	List<VehiculoEntity> listarVechiculos(@Param(value = "param")boolean disponible);
 	

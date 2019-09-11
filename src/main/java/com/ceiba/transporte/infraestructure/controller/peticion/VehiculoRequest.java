@@ -7,6 +7,7 @@ import java.time.LocalDateTime;
 public class VehiculoRequest implements Serializable {
 	private static final long serialVersionUID = -5075426439124835228L;
 	
+	private Long idVehiculo;
 	private String placa;
 	private int modelo;
 	private LocalDateTime soat;
@@ -15,6 +16,14 @@ public class VehiculoRequest implements Serializable {
 	private boolean disponible;
 	private TonelajeRequest tonelaje;
 	
+	
+	
+	public Long getIdVehiculo() {
+		return idVehiculo;
+	}
+	public void setIdVehiculo(Long idVehiculo) {
+		this.idVehiculo = idVehiculo;
+	}
 	public String getPlaca() {
 		return placa;
 	}
