@@ -21,6 +21,12 @@ public class Tonelaje {
 		
 	}
 	
+	public Tonelaje( String rango,  double precio) {		
+		this.rango = rango;
+		this.precio = precio;
+	}
+	
+	
 	public Tonelaje(long id, String rango,  double precio) {
 		this.id = id;
 		this.rango = rango;

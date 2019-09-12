@@ -24,6 +24,17 @@ public class Conductor {
 		this.segundoApellido = segundoApellido;
 		this.celular = celular;
 	}
+	
+	public Conductor(String cedula, String primerNombre, String segundoNombre, String primerApellido,
+			String segundoApellido, String celular) {
+		this.cedula = cedula;
+		this.primerNombre = primerNombre;
+		this.segundoNombre = segundoNombre;
+		this.primerApellido = primerApellido;
+		this.segundoApellido = segundoApellido;
+		this.celular = celular;
+	}
+	
 	public String getCedula() {
 		return cedula;
 	}

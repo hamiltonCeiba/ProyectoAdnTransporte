@@ -48,7 +48,7 @@ public class ConductorServiceIntegrationTest {
 	@Test
 	public void guardarConductorTest() {
 		// arrange
-		Conductor conductor = construirConductor();
+		Conductor conductor = PeticionesIntegrationTest.construirConductor();
 
 		ConductorRepositoryImpl conductorRepository = new ConductorRepositoryImpl(repositoryJpa, mapper);
 		ConductorService conductorServicio = new ConductorService(conductorRepository);
@@ -65,36 +65,15 @@ public class ConductorServiceIntegrationTest {
 	@Test
 	public void guardarConductorServiceTest() {
 		// arrange
-		Conductor conductor = construirConductor();
-		TestRestTemplate restTemplate = new TestRestTemplate();
-		HttpEntity<Conductor> entity = new HttpEntity<Conductor>(conductor,new HttpHeaders());
-		//act
-		
-		ResponseEntity<Conductor> response = restTemplate.exchange(obtenerUrl("/crear-conductor"), HttpMethod.POST,entity,Conductor.class);
+		Conductor conductor = PeticionesIntegrationTest.construirConductor();
+		//act		
+		ResponseEntity<Conductor> response = PeticionesIntegrationTest.guardarConductor(conductor, port);
 		int status = response.getStatusCodeValue();
 		//assert
 		assertTrue(status ==200);
 	}
 	
-//	@Test
-//	public void listarConductorServiceTest() {
-//		//arrange
-//		Conductor conductor = construirConductor();
-//		TestRestTemplate restTemplate = new TestRestTemplate();
-//		HttpEntity<Conductor> entity = new HttpEntity<Conductor>(conductor,new HttpHeaders());
-//		//act
-//		ResponseEntity<Conductor> response = restTemplate.exchange(obtenerUrl("/listar-conductor"), HttpMethod.POST,entity,Conductor.class);
-//		int status = response.getStatusCodeValue();
-//		//assert
-//		assertTrue(status ==200);
-//	}
+
 	
-	private Conductor construirConductor() {
-		return  new ConductorTestDataBuilder().withCedula(CEDULA).withPrimerApellido(PRIMER_APELLIDO)
-				.withSegundoApellido(SEGUNDO_APELLIDO).withPrimerNombre(PRIMER_NOMBRE).withSegundoNombre(SEGUNDO_NOMBRE)
-				.build();
-	}
-	private String obtenerUrl(String urlService) {
-		return URL_BASE+port+"/transporte/conductor"+urlService;
-	}
+	
 }

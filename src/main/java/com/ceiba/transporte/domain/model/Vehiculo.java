@@ -28,6 +28,18 @@ public class Vehiculo {
 		this.disponible = disponible;
 		this.tonelaje = tonelaje;
 	}
+	
+	public Vehiculo(String placa, int modelo, LocalDateTime soat, LocalDateTime tecnomecanico, double capacidad,
+			boolean disponible,Tonelaje tonelaje) {
+		this.placa = placa;
+		this.modelo = modelo;
+		this.soat = soat;
+		this.tecnomecanico = tecnomecanico;
+		this.capacidad = capacidad;
+		this.disponible = disponible;
+		this.tonelaje = tonelaje;
+	}
+	
 	public Long getIdVehiculo() {
 		return idVehiculo;
 	}
