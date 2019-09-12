@@ -28,19 +28,19 @@ public class ConductorRepositoryImpl implements ConductorRepository {
 	}
 
 	@Override
-	public void guardarConductor(Conductor conductor) {
+	public void guardar(Conductor conductor) {
 		ConductorEntity entity = mapper.map(conductor, ConductorEntity.class);
 		repositorio.save(entity);
 
 	}
 
 	@Override
-	public void eliminarConductor(Conductor conductor) {
+	public void eliminar(Conductor conductor) {
 		repositorio.delete(mapper.map(conductor, ConductorEntity.class));
 	}
 
 	@Override
-	public List<Conductor> listarConductore() {
+	public List<Conductor> listar() {
 		List<ConductorEntity> listconductor = repositorio.listConductores();
 		List<Conductor> listaConductores = new ArrayList<>();
 		listconductor.forEach(conductor-> {
@@ -50,7 +50,7 @@ public class ConductorRepositoryImpl implements ConductorRepository {
 	}
 	
 	@Override
-	public boolean eliminarConductorPorCedula(String cedula) {
+	public boolean eliminarPorCedula(String cedula) {
 		int resultSql = repositorio.eliminarConductorPorCedula(cedula);
 		return resultSql == 1;
 	}

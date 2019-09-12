@@ -10,12 +10,9 @@ public class Conductor {
 	private String segundoApellido;
 	private String celular;
 	
-	public Conductor() {
-		
-	}
-	
 	public Conductor(Long id,String cedula, String primerNombre, String segundoNombre, String primerApellido,
 			String segundoApellido, String celular) {
+		// VAlicaciones integridad, validar cedula, nombre, etc, si falla arrojar excepciones de negocio.
 		this.id = id;
 		this.cedula = cedula;
 		this.primerNombre = primerNombre;

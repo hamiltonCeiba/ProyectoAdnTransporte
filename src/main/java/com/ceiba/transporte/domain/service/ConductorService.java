@@ -10,7 +10,7 @@ import com.ceiba.transporte.domain.repository.ConductorRepository;
 
 @Service
 public class ConductorService {
-	
+	// Los servicios los puede crear por cada responsabilidad que se tenga.
 	@Autowired
 	ConductorRepository conductorRepository;
 	
@@ -20,19 +20,19 @@ public class ConductorService {
 
 		
 	public void guardarConductor(Conductor conductor) {
-		conductorRepository.guardarConductor(conductor);
+		conductorRepository.guardar(conductor);
 	}
 	
 	public void eliminarConductor(Conductor conductor) {
-		conductorRepository.eliminarConductor(conductor);
+		conductorRepository.eliminar(conductor);
 	}
 	
 	public boolean eliminarConductorPorCedula(String cedulaConductor) {
-		return conductorRepository.eliminarConductorPorCedula(cedulaConductor);
+		return conductorRepository.eliminarPorCedula(cedulaConductor);
 	}
 	
 	public List<Conductor> listarConductores(){
-		return conductorRepository.listarConductore();
+		return conductorRepository.listar();
 	}
 	
 }

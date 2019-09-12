@@ -10,14 +10,11 @@ public class Servicio {
 	private double totalServicio;
 	private Vehiculo vehiculo;
 	private Conductor conductor;
-	
-	public Servicio() {
 		
-	}
-	
 	
 	public Servicio(double distanciaKm, String direccionInicial, String direccionFinal, String municipioFinal,
 			double totalServ, Vehiculo vehiculo, Conductor conductor) {
+		//validacion municipio
 		this.distanciaKm = distanciaKm;
 		this.direccionInicial = direccionInicial;
 		this.direccionFinal = direccionFinal;

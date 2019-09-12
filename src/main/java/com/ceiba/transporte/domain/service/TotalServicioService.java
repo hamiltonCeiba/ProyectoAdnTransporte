@@ -9,6 +9,7 @@ public class TotalServicioService {
 
 
 	private static final String MEDELLIN = "MEDELLIN";
+	private static final double TASA_INTERES = 1.10;
 	
 	public double calcularServicio(Servicio servicio) {
 		Calendar calendar = Calendar.getInstance();
@@ -33,7 +34,7 @@ public class TotalServicioService {
 
 	public double calcularSegunMunicipio(double subTotalServicio, String municipio) {
 		if (!municipio.equalsIgnoreCase(MEDELLIN)) {
-			subTotalServicio = subTotalServicio * 1.10;
+			subTotalServicio = subTotalServicio * TASA_INTERES;
 		}
 		else {
 			subTotalServicio = 0;

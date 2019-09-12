@@ -46,7 +46,7 @@ public class ConductorServiceIntegrationTest {
 		List<Conductor> conductoresRecuperados = conductorServicio.listarConductores();
 
 		// assert
-		assertTrue((conductorRepository.listarConductore().size()) ==  conductoresRecuperados.size());		
+		assertTrue((conductorRepository.listar().size()) ==  conductoresRecuperados.size());		
 	}
 	
 	@Test
