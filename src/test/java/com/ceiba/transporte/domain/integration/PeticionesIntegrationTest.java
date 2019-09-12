@@ -40,7 +40,7 @@ public final class PeticionesIntegrationTest {
 	private static final String CELULAR = "3206634722";
 	private static final String MEDELLIN = "Medellin";
 	private static final long DISTANCIA = 20;
-	private static final String DIRECCION_FINAL ="dirección final";
+	private static final String DIRECCION_FINAL ="direccion final";
 	
 	public static String obtenerUrl(String urlService, int port) {
 		return URL_BASE + port + "/transporte/" + urlService;
