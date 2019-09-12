@@ -10,31 +10,18 @@ import org.junit.runner.RunWith;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.ceiba.transporte.domain.model.Conductor;
 import com.ceiba.transporte.domain.service.ConductorService;
-import com.ceiba.transporte.domain.testdatabuilder.ConductorTestDataBuilder;
 import com.ceiba.transporte.infraestructure.db.ConductorRepositoryImpl;
 import com.ceiba.transporte.infraestructure.db.jpa.ConductorRepositoryJPA;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class ConductorServiceIntegrationTest {
-
-	private static final String CEDULA = "1061774664";
-	private static final String PRIMER_NOMBRE = "Hamilton";
-	private static final String SEGUNDO_NOMBRE = "Daniel";
-	private static final String PRIMER_APELLIDO = "Jojoa";
-	private static final String SEGUNDO_APELLIDO = "Cordoba";
-	private static final String URL_BASE = "http://localhost:";
-	//private static final boolean DISPONIBLE = true;
 
 	@Autowired
 	private ConductorRepositoryJPA repositoryJpa;

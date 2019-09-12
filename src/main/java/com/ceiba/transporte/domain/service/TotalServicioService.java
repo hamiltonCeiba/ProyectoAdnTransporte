@@ -14,7 +14,7 @@ public class TotalServicioService {
 		Calendar calendar = Calendar.getInstance();
 		double subTotal = calcularPrecioSegunDistancia(servicio.getDistanciaKm(),
 				servicio.getVehiculo().getTonelaje().getPrecio());
-		return calcularSegunDia(subTotal, calendar.get(Calendar.DAY_OF_WEEK))
+		return subTotal + calcularSegunDia(subTotal, calendar.get(Calendar.DAY_OF_WEEK))
 				+ calcularSegunMunicipio(subTotal, servicio.getMunicipioFinal());
 	}
 
@@ -25,6 +25,8 @@ public class TotalServicioService {
 	public double calcularSegunDia(double subTotalServicio, int diaDeSemana) {
 		if (OperacionFechas.esDomingo(diaDeSemana)) {
 			subTotalServicio = subTotalServicio * 1.15;
+		}else {
+			subTotalServicio = 0;
 		}
 		return Math.round(subTotalServicio);
 	}
@@ -32,6 +34,9 @@ public class TotalServicioService {
 	public double calcularSegunMunicipio(double subTotalServicio, String municipio) {
 		if (!municipio.equalsIgnoreCase(MEDELLIN)) {
 			subTotalServicio = subTotalServicio * 1.10;
+		}
+		else {
+			subTotalServicio = 0;
 		}
 		return Math.round(subTotalServicio);
 
